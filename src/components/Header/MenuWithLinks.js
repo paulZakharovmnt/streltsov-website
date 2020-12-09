@@ -1,35 +1,22 @@
 import React, { useState } from "react";
-import NavBarOptions from "./NavBarOptions";
 import ParentLink from "./ParentLink";
+import {
+  linksWithOptions,
+  directLinks,
+  childLinks,
+} from "../../core/NavigationLinks";
 import "./MenuWithLinks.css";
 
 const MenuWithLinks = () => {
-  const linksWithOptions = ["Pen", "Jewelry", "Accessory"];
-  const directLinks = ["Gallery", "About"];
-  const childLinks = {
-    Pen: ["BallPoint Pens", "Fountain Pens", "Pencils", "Limited Edition"],
-    Jewelry: ["Pendants"],
-    Accessory: [
-      "Bracelets",
-      "Lighters",
-      "Cufflinks",
-      "Keychains",
-      "Beads",
-      "Dices",
-      "MadRussianheads.com",
-    ],
-  };
   const [showingParentLinkList, setShowingParentLinkList] = useState("");
   const [showChildLinks, setshowChildLinks] = useState(false);
 
   const handleShowChildLinksClick = (parentLink) => {
     if (parentLink === showingParentLinkList) {
-      console.log("why not working?");
       setShowingParentLinkList("");
       return;
     }
     setShowingParentLinkList(parentLink);
-    console.log(parentLink);
   };
   return (
     <div className="black-cover">
@@ -52,18 +39,6 @@ const MenuWithLinks = () => {
               </div>
             </div>
           ))}
-          {/* {linksWithOptions.map((option) => (
-            <NavBarOptions
-              key={option}
-              option={option}
-              childLinks={childLinks}
-            />
-          ))}
-          {directLinks.map((link) => (
-            <div className="menu-option" key={link}>
-              {link}
-            </div>
-          ))} */}
         </div>
       </div>
     </div>
