@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MenuWithLinks from "./MenuWithLinks";
 import classNames from "classnames";
+import { Link } from "react-router-dom";
 import "./Nav.css";
 
 const Nav = () => {
@@ -26,14 +27,17 @@ const Nav = () => {
           <span></span>
           <span></span>
         </div>
-
-        <div className="logo"></div>
+        <Link to="/">
+          <div className="logo"></div>
+        </Link>
 
         <div className="cart">
-          <i className="cart-icon fas fa-shopping-cart" />
-          <div className={itemsInCartCounterClasses}>
-            <h4>3</h4>
-          </div>
+          <Link to="/cart">
+            <i className="cart-icon fas fa-shopping-cart" />
+            <div className={itemsInCartCounterClasses}>
+              <h4>3</h4>
+            </div>
+          </Link>
         </div>
       </div>
       {showMenu && (

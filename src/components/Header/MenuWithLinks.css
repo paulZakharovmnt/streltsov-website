@@ -127,7 +127,7 @@
 
   .parent-link {
     /* background-color: cyan; */
-    width: 50%;
+    width: 70%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -136,6 +136,21 @@
 
   .parent-link > p {
     margin: 0;
+  }
+
+  .parent-link:hover {
+    color: coral;
+  }
+
+  .openedParent {
+    color: coral;
+  }
+  .arrow-btn {
+    transition: all 0.2s ease-in;
+  }
+  .angleClose {
+    color: coral;
+    transform: rotate(90deg);
   }
 
   .child-links-container {
@@ -157,13 +172,24 @@
     padding: 20px;
   }
 
+  .child-link {
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+  }
+
+  .child-link:hover {
+    color: coral;
+  }
+
   .border-under-link {
     width: 0px;
     height: 4px;
     border-radius: 20px;
     background-color: rgb(165, 42, 42);
-    position: relative;
-    display: block;
+    position: absolute;
+    margin-top: 55px;
+    /* position: relative; */
+    /* display: block; */
     transition: all 0.3s ease-in;
   }
 

@@ -12,7 +12,9 @@
 }
 
 .nav-dynamic-part {
-  background-color: orangered;
+  /* background-color: orangered; */
+  position: absolute;
+  width: 100%;
 }
 
 .logo {
