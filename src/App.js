@@ -1,13 +1,27 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Nav from "./components/Header/Nav";
 import Swiper from "./components/Swiper";
 import About from "./Pages/About";
-import Cart from "./Pages/Cart";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Cart from "./components/Cart/Cart";
+import Products from "./components/Products/Products";
+import ProductInfoPage from "./components/ProductInfoPage";
 import Footer from "./components/Footer/Footer";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+
+import { setProductsToStateFromFB } from "./redux/actions/actions";
+import { productsByIdTEST } from "./core/TestProducts";
 
 function App() {
+  // const productsAllIds = useSelector((state) => state.productsAllIdsReducer);
+  // const productsById = useSelector((state) => state.productsByIdReducer);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setProductsToStateFromFB(productsByIdTEST));
+  }, []);
+
   return (
     <Router>
       <div className="App">
@@ -18,12 +32,11 @@ function App() {
           <Route path="/" component={Swiper} exact />
           <Route path="/about" component={About} />
           <Route path="/cart" component={Cart} />
+          <Route path="/products" component={Products} exact />
+          <Route path="/products/:productId" component={ProductInfoPage} />
         </Switch>
-        {/* <main>
-          <Swiper />
-        </main> */}
         <footer>
-          <Footer />{" "}
+          <Footer />
         </footer>
       </div>
     </Router>
