@@ -160,6 +160,7 @@
     margin-top: 480px;
     width: 220px;
     height: 420px;
+    z-index: 300;
   }
 
   .list-of-child-links {

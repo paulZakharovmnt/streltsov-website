@@ -1,0 +1,122 @@
+.cart-product-container {
+  /* background-color: cadetblue; */
+  background-color: rgba(128, 128, 128, 0.233);
+  border: 2px solid grey;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  height: 180px;
+
+  /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px; */
+}
+
+.cart-product-image {
+  /* background-color: darkred; */
+  /* width: 100px; */
+  height: 140px;
+  width: 20%;
+}
+
+.product-name-price {
+  /* background-color: blanchedalmond; */
+  width: 30%;
+  text-align: left;
+  padding: 0 30px;
+  height: 140px;
+}
+
+.product-quont-remove {
+  /* background-color: blue; */
+  height: 140px;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.product-final-price {
+  /* background-color: chartreuse; */
+  width: 15%;
+  height: 140px;
+}
+
+.product-final-price > h4 {
+  font-size: 30px;
+  padding-top: 33px;
+  margin: 0;
+}
+
+.cart-quontity-container {
+  /* background-color: darkcyan; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+  height: 60px;
+  font-size: 24px;
+}
+
+.cart-quontity-container > div {
+  width: 33.3%;
+}
+
+.cart-quontity-container:hover .quont-control {
+  opacity: 1;
+}
+.quont-control {
+  font-size: 22px;
+  opacity: 0;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.remove-btn {
+  cursor: pointer;
+}
+
+/* .cart-product-info {
+  background-color: darksalmon;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-product-main-info {
+  background-color: darkslategray;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+.cart-product-main-info > h2 {
+  background-color: dodgerblue;
+  width: 40%;
+}
+
+
+.cart-product-container > h2 {
+  background-color: crimson;
+  width: 25%;
+}
+
+.cart-product-additional-info {
+  background-color: deepskyblue;
+  width: 90%;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+ */
