@@ -1,54 +1,46 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-// import { productsByIdTEST, productsById } from "../../core/TestProducts";
-import filterProducts from "../../core/filterProducts";
-// import filterProductAllIds from "../../core/filterProductAllIds";
+import { useSelector } from "react-redux";
 import "./Products.css";
+import FilterBar from "./Filters/FilterBar";
 
 const Products = () => {
-  const [showFiltersBar, setShowFiltersBar] = useState(false);
-  const [filteredBy, setFilteredBy] = useState(null);
-
+  const filtersState = useSelector((state) => state.filtersReducer);
   const productsById = useSelector((state) => state.productsByIdReducer);
-
-  let filteredProductsAllIds = [];
-
-  if (productsById !== null) {
-    const filteredProducts = filterProducts(filteredBy, productsById);
-    filteredProductsAllIds = Object.keys(filteredProducts);
-  }
+  const productsAllIds = useSelector((state) => state.productsAllIdsReducer);
 
   return (
     <div className="products-page">
-      <div className="products-header">PENS</div>
-      <div className="filter-container">
-        <button onClick={() => setShowFiltersBar(!showFiltersBar)}>
-          Filters
-        </button>
-        {showFiltersBar && (
-          <div className="filters">
-            <select onChange={(event) => setFilteredBy(event.target.value)}>
-              <option value={null}>Show all</option>
-              <option value="collection">Collection</option>
-              <option value="type">Type</option>
-            </select>
-          </div>
-        )}
+      <div className="products-header">
+        <h1>PENS</h1>
       </div>
+      <FilterBar />
+
       <div className="list-of-products-container">
         <div className="list-of-products">
-          {filteredProductsAllIds.map((product) => (
-            <div key={product} className="product-container">
-              <img src={productsById[product].image} alt="" />
-              <div className="product-info-line">
-                <h3>{productsById[product].name}</h3>
-                <h3>
-                  <Link to={`/products/${product}`}>See details</Link>
-                </h3>
+          {productsAllIds
+            .filter((product) =>
+              filtersState.byMaterial
+                ? productsById[product].material === filtersState.byMaterial
+                : true
+            )
+            .filter((product) =>
+              filtersState.byCollection
+                ? productsById[product].collection === filtersState.byCollection
+                : true
+            )
+            .map((product) => (
+              <div key={product} className="product-container">
+                <img src={productsById[product].image} alt="" />
+                <div className="product-info-line">
+                  <h3>{productsById[product].name}</h3>
+                  <h3>Price: {productsById[product].price}</h3>
+                  <h3>
+                    <Link to={`/products/${product}`}>See details</Link>
+                  </h3>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </div>
