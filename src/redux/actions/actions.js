@@ -37,3 +37,23 @@ export const decrementProductQuontity = (product) => {
     payload: product,
   };
 };
+
+export const changePriceSort = (filterProp) => {
+  return {
+    type: "CHANGE_PRICE_FILTER",
+    payload: filterProp,
+  };
+};
+
+export const changeCollectionFilter = (filterProp) => {
+  return {
+    type: "CHANGE_COLLECTION_FILTER",
+    payload: filterProp,
+  };
+};
+export const changeMaterialFilter = (filterProp) => {
+  return {
+    type: "CHANGE_MATERIAL_FILTER",
+    payload: filterProp,
+  };
+};
