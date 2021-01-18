@@ -33,10 +33,8 @@ const MenuWithLinks = () => {
           ))}
 
           {directLinks.map((directLink) => (
-            <div className="parent-link-container">
-              <div className="parent-link" key={directLink}>
-                {directLink}
-              </div>
+            <div className="parent-link-container" key={directLink}>
+              <div className="parent-link">{directLink}</div>
             </div>
           ))}
         </div>
