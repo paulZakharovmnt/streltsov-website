@@ -6,7 +6,8 @@ export const productsByIdTEST = {
     collection: "Samurai",
     type: "Pen",
     id: 12221,
-    price: 400,
+    price: 1400,
+    material: "Titanium",
     description: "Amazing pen made using",
     ttx: {
       width: 122,
@@ -22,6 +23,7 @@ export const productsByIdTEST = {
     type: "Pencil",
     id: 12222,
     price: 500,
+    material: "Aluminium",
     description: "From new collection",
     ttx: {
       width: 122,
@@ -37,6 +39,7 @@ export const productsByIdTEST = {
     type: "Pen",
     id: 12223,
     price: 600,
+    material: "Titanium",
     description: "Cool pen",
     ttx: {
       width: 122,
@@ -52,6 +55,7 @@ export const productsByIdTEST = {
     type: "Pencil",
     id: 12224,
     price: 700,
+    material: "Aluminium",
     description: "Cool pen",
     ttx: {
       width: 122,
