@@ -1,31 +1,81 @@
 .products-page {
   /* background-color: blueviolet; */
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   /* height: 700px; */
   min-height: 700px;
   padding-top: 80px;
   padding-bottom: 50px;
+  color: white;
 }
 
 .products-header {
-  background-color: brown;
+  color: white;
+  /* background-color: brown; */
   height: 80px;
+}
+
+.products-header > h1 {
+  margin: 0;
 }
 
 .filter-container {
   height: 60px;
   background-color: burlywood;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.show-filters-btn {
+  background-color: darkred;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border: 2px solid white;
+}
+
+.span-line {
+  width: 0px;
+  height: 5px;
+  background-color: darkred;
+  transition: all 0.3s ease-in-out;
+}
+
+.span-line.opened {
+  width: 150px;
+}
+
+.filters {
+  height: 100%;
+}
+
+.sort-by-selector {
+  width: 200px;
+  height: 100%;
+  font-size: 20px;
+  color: white;
+  border: 2px solid white;
+  background-color: darkred;
+  text-align: center;
+  text-align-last: center;
 }
 
 .list-of-products-container {
-  background-color: chartreuse;
+  /* background-color: chartreuse; */
   /* height: 300px; */
 }
 
 .list-of-products {
-  background-color: coral;
-  padding: 20px 0;
+  /* background-color: coral; */
+  padding-top: 5px;
+  padding-bottom: 30px;
 
   /* height: 300px; */
   display: flex;
@@ -36,10 +86,11 @@
 }
 
 .product-container {
-  width: 660px;
-  height: 660px;
-  margin-top: 20px;
-  background-color: cornsilk;
+  width: 600px;
+  height: 600px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  background-color: black;
   position: relative;
   cursor: pointer;
 }
@@ -65,6 +116,26 @@
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 660px;
-  height: 660px;
+  max-width: 600px;
+  height: 600px;
+}
+
+@media screen and (max-width: 768px) {
+  .products-page {
+    width: 100%;
+  }
+  .list-of-products-container {
+    width: 90%;
+    margin: 0 auto;
+    background-color: black;
+  }
+  .product-container {
+    width: 100%;
+    max-height: 360px;
+  }
+
+  .product-container > img {
+    max-width: 100%;
+    max-height: 300px;
+  }
 }
