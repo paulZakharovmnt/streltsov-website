@@ -14,8 +14,6 @@ import { setProductsToStateFromFB } from "./redux/actions/actions";
 import { productsByIdTEST } from "./core/TestProducts";
 
 function App() {
-  // const productsAllIds = useSelector((state) => state.productsAllIdsReducer);
-  // const productsById = useSelector((state) => state.productsByIdReducer);
   const dispatch = useDispatch();
 
   useEffect(() => {
