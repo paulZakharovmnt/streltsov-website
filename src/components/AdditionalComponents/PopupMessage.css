@@ -1,0 +1,21 @@
+.pop-up-message-container {
+  /* background-color: darkorchid; */
+
+  width: 400px;
+  padding: 0 10px;
+
+  border: 2px solid darkorange;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+.product-name-popup {
+  width: 100px;
+  margin: 0;
+  color: darkorange;
+  font-size: 18px;
+}
