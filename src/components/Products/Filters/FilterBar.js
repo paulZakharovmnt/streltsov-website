@@ -8,11 +8,7 @@ import {
   changeMaterialFilter,
 } from "../../../redux/actions/actions";
 
-const FilterBar = ({
-  setPriceFilter,
-  setCollectionFilter,
-  setMaterialFilter,
-}) => {
+const FilterBar = ({}) => {
   const [showFilters, setShowFilters] = useState(false);
   const filters = useSelector((state) => state.filtersReducer);
   const dispatch = useDispatch();
