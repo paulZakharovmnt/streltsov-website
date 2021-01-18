@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { productsByIdTEST } from "../core/TestProducts";
 import { useSelector, useDispatch } from "react-redux";
@@ -10,10 +10,16 @@ import image3 from "../img/Products/IMG_4666.jpg";
 import ProductImagesModal from "./ProductImagesModal";
 import "./ProductInfoPage.css";
 import Button from "./Button/Button";
+import PopupMessage from "./AdditionalComponents/PopupMessage";
+import LeftArrow from "./AdditionalComponents/ImageNavArrows/LeftArrow";
+import RightArrow from "./AdditionalComponents/ImageNavArrows/RightArrow";
+import GoBackBTN from "./AdditionalComponents/GoBackBTN";
+import { useSwipeable } from "react-swipeable";
 
 const ProductInfoPage = () => {
   const { productId } = useParams();
   const [productIsInCart, setProductIsInCart] = useState(false);
+  const [showPopUpMessage, setShowPopUpMessage] = useState(false);
   const [listOfImages, setListOfImages] = useState([image1, image2, image3]);
   const [showingImageId, setShowingImageId] = useState(0);
   const [showProductPhotosModal, setShowProductPhotosModal] = useState(false);
@@ -34,6 +40,14 @@ const ProductInfoPage = () => {
       setProductIsInCart(true);
     }
   }, []);
+
+  useEffect(() => {
+    if (showPopUpMessage) {
+      setTimeout(() => {
+        setShowPopUpMessage(false);
+      }, 4000);
+    }
+  }, [showPopUpMessage]);
 
   const showNextImage = () => {
     if (showingImageId === listOfImages.length - 1) {
@@ -64,110 +78,114 @@ const ProductInfoPage = () => {
     };
     dispatch(addProductToCart(productInfoForCart));
     setProductIsInCart(true);
+    setShowPopUpMessage(true);
   };
 
   // const tabBtnClasses = classNames('product-info-btn', {
   //   openedTab:
   // })
 
+  const swipeImageHandlers = useSwipeable({
+    onSwipedRight: () => showPrevImage(),
+    onSwipedLeft: () => showNextImage(),
+  });
+  const myRef = useRef();
+  const refPassthrough = (el) => {
+    // call useSwipeable ref prop with el
+    swipeImageHandlers.ref(el);
+
+    // set myRef el so you can access it yourself
+    myRef.current = el;
+  };
+
   return (
-    // <div className="product-info-page">
-    <div className="product-info-page-container">
-      <div className="product-info-page-left">
-        <div className="product-images-container">
-          <div className="left-arrow-container">
-            <div className="arrow-left" onClick={showPrevImage}>
-              <div className="arrow-top"></div>
-              <div className="arrow-bottom"></div>
-            </div>
-          </div>
-          <img
-            className="product-image"
-            src={listOfImages[showingImageId]}
-            alt=""
-            onClick={() => setShowProductPhotosModal(true)}
-          />
-          <div className="right-arrow-container">
-            <div className="arrow-right" onClick={showNextImage}>
-              <div className="arrow-top"></div>
-              <div className="arrow-bottom"></div>
-            </div>
-          </div>
-        </div>
-        <div className="image-counter-container">
-          {listOfImages.map((image, id) => (
-            // <div className="dot-container">
-            <i
-              key={id}
-              className={
-                showingImageId === id
-                  ? "selected-dot fas fa-circle"
-                  : "fas fa-circle"
-              }
-            />
-            // </div>
-          ))}
-        </div>
+    <div className="product-page">
+      <div className="back-to-products-button-container">
+        <GoBackBTN />
       </div>
 
-      <div className="product-general-info">
-        <div className="product-price-and-name-container">
-          <h2>{currentProduct.name}</h2>
-          <h2>${currentProduct.price}</h2>
-        </div>
+      <div className="product-info-page-container">
+        {showPopUpMessage && (
+          <div className="product-in-cart-message">
+            <PopupMessage currentProduct={currentProduct} />
+          </div>
+        )}
 
-        <div className="product-info">
-          <div className="product-info-selector">
-            {productTabs.map((tab) => (
-              <div
+        <div className="product-info-page-left">
+          <div className="product-images-container">
+            <LeftArrow showPrevImage={showPrevImage} />
+            <img
+              {...swipeImageHandlers}
+              ref={refPassthrough}
+              className="product-image"
+              src={listOfImages[showingImageId]}
+              alt=""
+              onClick={() => setShowProductPhotosModal(true)}
+            />
+            <RightArrow showNextImage={showNextImage} />
+          </div>
+          <div className="image-counter-container">
+            {listOfImages.map((image, id) => (
+              <i
+                key={id}
                 className={
-                  tab === selectedProductInfo
-                    ? "product-info-btn openedTab"
-                    : "product-info-btn"
+                  showingImageId === id
+                    ? "selected-dot fas fa-circle"
+                    : "fas fa-circle"
                 }
-                key={tab}
-                onClick={() => setSelectedProductInfo(tab)}
-              >
-                {tab}
-              </div>
+              />
             ))}
-            {/* <div className="product-info-btn" value="Description">
-              Description
-            </div>
-            <div className="product-info-btn" value="TTX">
-              TTX
-            </div>
-            <div className="product-info-btn" value="Delivery">
-              Delivery
-            </div> */}
+          </div>
+        </div>
+
+        <div className="product-general-info">
+          <div className="product-price-and-name-container">
+            <h2>{currentProduct.name}</h2>
+            <h2>${currentProduct.price}</h2>
           </div>
 
-          <div className="product-description"> INFO </div>
-        </div>
-        <div className="product-links">
-          <h5>MAY BE LINK FOR COLLECTION</h5>
-          <div onClick={handleAddProductToCartClick}>
-            <Button
-              productIsInCart={productIsInCart}
-              productsInCart={productsInCart}
-              productId={productId}
-            />
+          <div className="product-info">
+            <div className="product-info-selector">
+              {productTabs.map((tab) => (
+                <div
+                  className={
+                    tab === selectedProductInfo
+                      ? "product-info-btn openedTab"
+                      : "product-info-btn"
+                  }
+                  key={tab}
+                  onClick={() => setSelectedProductInfo(tab)}
+                >
+                  {tab}
+                </div>
+              ))}
+            </div>
+
+            <div className="product-description"> INFO </div>
+          </div>
+          <div className="product-links">
+            <h5>MAY BE LINK FOR COLLECTION</h5>
+            <div onClick={handleAddProductToCartClick}>
+              <Button
+                productIsInCart={productIsInCart}
+                productsInCart={productsInCart}
+                productId={productId}
+              />
+            </div>
           </div>
         </div>
+        {showProductPhotosModal && (
+          <ProductImagesModal
+            listOfImages={listOfImages}
+            showingImageId={showingImageId}
+            setShowProductPhotosModal={setShowProductPhotosModal}
+            setShowingImageId={setShowingImageId}
+            showNextImage={showNextImage}
+            showPrevImage={showPrevImage}
+          />
+        )}
       </div>
-      {showProductPhotosModal && (
-        <ProductImagesModal
-          listOfImages={listOfImages}
-          showingImageId={showingImageId}
-          setShowProductPhotosModal={setShowProductPhotosModal}
-          setShowingImageId={setShowingImageId}
-          showNextImage={showNextImage}
-          showPrevImage={showPrevImage}
-        />
-      )}
     </div>
-
-    // </div>
   );
 };
 
