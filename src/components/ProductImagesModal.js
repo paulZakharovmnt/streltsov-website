@@ -1,4 +1,6 @@
 import React from "react";
+import LeftArrow from "./AdditionalComponents/ImageNavArrows/LeftArrow";
+import RightArrow from "./AdditionalComponents/ImageNavArrows/RightArrow";
 import "./ProductImagesModal.css";
 
 const ProductImagesModal = ({
@@ -12,19 +14,22 @@ const ProductImagesModal = ({
   return (
     <div className="black-layout">
       <div className="product-photo-container">
+        <div
+          className="close-modal-container"
+          onClick={() => setShowProductPhotosModal(false)}
+        >
+          Close Modal
+        </div>
         <div className="photo-container-top">
-          <div className="show-prev-photo" onClick={showPrevImage}>
-            Show prev
-          </div>
+          <LeftArrow showPrevImage={showPrevImage} />
           <div className="product-photo">
             <img src={listOfImages[showingImageId]} alt="" />
             {/* {listOfImages.map((image, id) => (
               <img key={id} src={image} alt="" />
             ))} */}
           </div>
-          <div className="show-next-photo" onClick={showNextImage}>
-            Show-Next
-          </div>
+
+          <RightArrow showNextImage={showNextImage} />
         </div>
         <div className="photo-container-bottom">
           <div className="image-counter">
@@ -42,12 +47,6 @@ const ProductImagesModal = ({
                 />
               </div>
             ))}
-          </div>
-          <div
-            className="close-modal-container"
-            onClick={() => setShowProductPhotosModal(false)}
-          >
-            Close Modal
           </div>
         </div>
       </div>
