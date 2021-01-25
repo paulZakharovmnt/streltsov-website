@@ -28,6 +28,18 @@
   background-position: center;
 }
 
-.footer-links-container {
-  width: 33.3%;
+.footer-links-container > ul {
+  /* width: 33.3%; */
+  /* background-color: darkorchid; */
+  display: flex;
+}
+
+.footer-links-container > ul > li {
+}
+
+.footer-links-container > ul > li > a {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
 }

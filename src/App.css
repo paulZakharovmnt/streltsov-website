@@ -1,3 +1,37 @@
+:root {
+  --header-height: 80px;
+  --nav-width: 324px;
+
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  --black: #000000;
+  --blue: #14213d;
+  --orange: #fca311;
+  --platinum: #e5e5e5;
+  --white: #ffffff;
+
+  /* --body-font: "Kufam", cursive;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem; */
+
+  /* Margenes */
+  /* --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem; */
+
+  /*z-Index*/
+
+  /* --z-index: 100; */
+}
+
 .App {
   text-align: center;
   /* background-color: #282c34; */
@@ -11,7 +45,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,7 +69,7 @@
 
 .App-link {
   color: #61dafb;
-}
+} */
 
 @media screen and (max-width: 768px) {
   .App {
@@ -43,11 +77,11 @@
   }
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */

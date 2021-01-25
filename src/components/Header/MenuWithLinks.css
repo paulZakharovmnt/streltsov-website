@@ -1,6 +1,7 @@
 @media screen and (max-width: 768px) {
   .parrent-list-of-links {
-    background-color: rgb(82, 78, 78);
+    /* background-color: rgb(82, 78, 78); */
+    background-color: var(--platinum);
     position: fixed;
     width: 70%;
     flex-direction: column;
@@ -101,7 +102,8 @@
   align-items: center; */
     padding: 0 50px;
     /* background-color: palegreen; */
-    background-color: rgb(82, 78, 78);
+    /* background-color: rgb(82, 78, 78); */
+    background-color: var(--platinum);
     height: 100%;
   }
 
@@ -132,6 +134,10 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+  .link-btn {
+    color: inherit;
+    text-decoration: inherit;
   }
 
   .parent-link > p {
@@ -176,6 +182,8 @@
   .child-link {
     cursor: pointer;
     transition: all 0.2s ease-in;
+    color: inherit;
+    text-decoration: inherit;
   }
 
   .child-link:hover {

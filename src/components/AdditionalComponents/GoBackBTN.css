@@ -1,5 +1,5 @@
 .go-back-btn {
-  color: darkorange;
+  color: var(--orange);
   text-decoration: none;
   font-size: 20px;
   display: inline-block;
@@ -7,7 +7,7 @@
   font-family: Montserrat;
   text-transform: uppercase;
   padding: 0.5em 2em;
-  border: 2px solid darkorange;
+  border: 2px solid var(--orange);
   transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
   cursor: pointer;
 }
@@ -22,7 +22,7 @@
   left: 100%;
   right: 0;
   bottom: 0;
-  background: darkorange;
+  background: var(--orange);
   transition: 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1),
     right 0.3s cubic-bezier(0.1, 0, 0.1, 1);
   z-index: -1;
