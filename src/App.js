@@ -1,13 +1,13 @@
 import "./App.css";
 import Nav from "./components/Header/Nav";
 import Swiper from "./components/Swiper";
-import About from "./Pages/About";
 import Cart from "./components/Cart/Cart";
 import Products from "./components/Products/Products";
 import ProductInfoPage from "./components/ProductInfoPage";
 import Footer from "./components/Footer/Footer";
+import About from "./components/About/About";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 
 import { setProductsToStateFromFB } from "./redux/actions/actions";
@@ -30,8 +30,11 @@ function App() {
           <Route path="/" component={Swiper} exact />
           <Route path="/about" component={About} />
           <Route path="/cart" component={Cart} />
-          <Route path="/products" component={Products} exact />
-          <Route path="/products/:productId" component={ProductInfoPage} />
+          <Route path="/products/:childLink" component={Products} exact />
+          <Route
+            path="/products/:childLink/:productId"
+            component={ProductInfoPage}
+          />
         </Switch>
         <footer>
           <Footer />
