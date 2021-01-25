@@ -1,7 +1,7 @@
-export const linksWithOptions = ["Pen", "Jewelry", "Accessory"];
-export const directLinks = ["Gallery", "About"];
+export const linksWithOptions = ["Pen / Pencil", "Jewelry", "Accessory"];
+export const directLinks = ["gallery", "about"];
 export const childLinks = {
-  Pen: ["BallPoint Pens", "Fountain Pens", "Pencils", "Limited Edition"],
+  "Pen / Pencil": ["Pen", "Pencil"],
   Jewelry: ["Pendants"],
   Accessory: [
     "Bracelets",
