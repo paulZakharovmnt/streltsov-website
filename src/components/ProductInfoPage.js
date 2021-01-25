@@ -17,7 +17,7 @@ import GoBackBTN from "./AdditionalComponents/GoBackBTN";
 import { useSwipeable } from "react-swipeable";
 
 const ProductInfoPage = () => {
-  const { productId } = useParams();
+  const { productId, childLink } = useParams();
   const [productIsInCart, setProductIsInCart] = useState(false);
   const [showPopUpMessage, setShowPopUpMessage] = useState(false);
   const [listOfImages, setListOfImages] = useState([image1, image2, image3]);
@@ -46,6 +46,10 @@ const ProductInfoPage = () => {
       setTimeout(() => {
         setShowPopUpMessage(false);
       }, 4000);
+
+      return () => {
+        setShowPopUpMessage(false);
+      };
     }
   }, [showPopUpMessage]);
 
@@ -101,7 +105,10 @@ const ProductInfoPage = () => {
   return (
     <div className="product-page">
       <div className="back-to-products-button-container">
-        <GoBackBTN />
+        <GoBackBTN
+          whereToLink={`/products/${childLink}`}
+          linkName="Back to List"
+        />
       </div>
 
       <div className="product-info-page-container">
@@ -114,25 +121,30 @@ const ProductInfoPage = () => {
         <div className="product-info-page-left">
           <div className="product-images-container">
             <LeftArrow showPrevImage={showPrevImage} />
-            <img
+            <div
+              className="product-image"
               {...swipeImageHandlers}
               ref={refPassthrough}
-              className="product-image"
-              src={listOfImages[showingImageId]}
-              alt=""
-              onClick={() => setShowProductPhotosModal(true)}
-            />
+            >
+              <img
+                src={listOfImages[showingImageId]}
+                alt=""
+                onClick={() => setShowProductPhotosModal(true)}
+              />
+            </div>
+
             <RightArrow showNextImage={showNextImage} />
           </div>
           <div className="image-counter-container">
             {listOfImages.map((image, id) => (
               <i
                 key={id}
-                className={
-                  showingImageId === id
-                    ? "selected-dot fas fa-circle"
-                    : "fas fa-circle"
-                }
+                // className={
+                //   showingImageId === id
+                //     ? "selected-dot fas fa-circle"
+                //     : "fas fa-circle"
+                // }
+                className={showingImageId === id ? "selected-dot dot" : "dot"}
               />
             ))}
           </div>
