@@ -20,26 +20,31 @@
   border-bottom-right-radius: 12px;
   border-top-right-radius: 12px;
   cursor: pointer;
-  border-top: 3px solid darkorange;
-  border-bottom: 3px solid darkorange;
-  border-right: 3px solid darkorange;
+  border-top: 3px solid rgba(255, 140, 0, 0.605);
+  border-bottom: 3px solid rgba(255, 140, 0, 0.605);
+  border-right: 3px solid rgba(255, 140, 0, 0.605);
   transition: all 0.2s ease-in-out;
 }
 
 .show-filters-button:hover {
   background-color: darkorange;
   color: black;
+  /* box-shadow: 0 0 20px 3px darkorange; */
   /* border: 3px solid black; */
 }
 
 .show-filters-button.opened {
-  background-color: darkorange;
-  color: black;
+  /* background-color: rgba(255, 140, 0, 0.805); */
+  border-top: 3px solid rgba(255, 140, 0, 0.605);
+  border-bottom: 3px solid rgba(255, 140, 0, 0.605);
+  border-right: 3px solid rgba(255, 140, 0, 0.605);
+  /* color: black; */
+  color: white;
 }
 
 .show-filters-button.opened:hover {
-  background-color: initial;
-  color: white;
+  background-color: rgba(255, 140, 0);
+  color: black;
 }
 
 .filters-container {
@@ -51,14 +56,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
-  border-top: 3px solid darkorange;
-  border-bottom: 3px solid darkorange;
+  border-top: 3px solid rgba(255, 140, 0, 0.6);
+  border-bottom: 3px solid rgba(255, 140, 0, 0.6);
+  /* box-shadow: 0 0 20px 3px darkorange; */
 }
 
 .left-border {
-  background-color: blanchedalmond;
-  border-right: 3px solid darkorange;
-  height: 59%;
+  /* background-color: blanchedalmond; */
+  border-right: 3px solid rgba(255, 140, 0, 0.6);
+  height: 260px;
   position: absolute;
   right: 40px;
   bottom: 0;
@@ -85,4 +91,38 @@
   height: 0.5em;
   background-color: var(--select-arrow);
   clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+@media screen and (max-width: 768px) {
+  .filter-bar {
+    position: relative;
+    flex-direction: column-reverse;
+  }
+
+  .show-filters-button {
+    /* background-color: khaki; */
+    writing-mode: horizontal-tb;
+    text-orientation: none;
+    margin: 0 auto;
+    height: 40px;
+    width: 90%;
+    border: none;
+    border-top: 2px solid darkorange;
+    border-bottom: 2px solid darkorange;
+    border-radius: 0;
+    letter-spacing: 7px;
+  }
+
+  .show-filters-button.opened {
+    border: none;
+  }
+
+  .filters-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .left-border {
+    display: none;
+  }
 }
