@@ -7,7 +7,6 @@ import "./Nav.css";
 
 const Nav = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [itemsincart, setitemsincart] = useState(1);
   const productsAllIdsInCart = useSelector(
     (state) => state.productsAllIdsInCartReducer
   );
@@ -48,7 +47,7 @@ const Nav = () => {
       </div>
       {showMenu && (
         <div className="nav-dynamic-part">
-          <MenuWithLinks />
+          <MenuWithLinks setShowMenu={setShowMenu} />
         </div>
       )}
     </div>
