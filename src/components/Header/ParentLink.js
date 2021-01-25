@@ -8,6 +8,7 @@ const ParentLink = ({
   parentLink,
   showingParentLinkList,
   childLinks,
+  setShowMenu,
 }) => {
   const lineClasses = classNames("border-under-link", {
     openedLine: showingParentLinkList === parentLink,
@@ -26,13 +27,13 @@ const ParentLink = ({
         onClick={() => handleShowChildLinksClick(parentLink)}
       >
         <p>{parentLink}</p>
-        {/* <NavArrow /> */}
         <i className={angleDownClasses} />
       </div>
       <span className={lineClasses}></span>
 
       {showingParentLinkList === parentLink && (
         <ChildLinks
+          setShowMenu={setShowMenu}
           childLinks={childLinks}
           showingParentLinkList={showingParentLinkList}
         />
