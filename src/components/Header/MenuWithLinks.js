@@ -6,8 +6,9 @@ import {
   childLinks,
 } from "../../core/NavigationLinks";
 import "./MenuWithLinks.css";
+import { Link } from "react-router-dom";
 
-const MenuWithLinks = () => {
+const MenuWithLinks = ({ setShowMenu }) => {
   const [showingParentLinkList, setShowingParentLinkList] = useState("");
   const [showChildLinks, setshowChildLinks] = useState(false);
 
@@ -29,12 +30,21 @@ const MenuWithLinks = () => {
               childLinks={childLinks}
               showingParentLinkList={showingParentLinkList}
               handleShowChildLinksClick={handleShowChildLinksClick}
+              setShowMenu={setShowMenu}
             />
           ))}
 
           {directLinks.map((directLink) => (
             <div className="parent-link-container" key={directLink}>
-              <div className="parent-link">{directLink}</div>
+              <div className="parent-link">
+                <Link
+                  className="link-btn"
+                  to={`/${directLink}`}
+                  onClick={() => setShowMenu(false)}
+                >
+                  {directLink}
+                </Link>
+              </div>
             </div>
           ))}
         </div>
