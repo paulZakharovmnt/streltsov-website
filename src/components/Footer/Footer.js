@@ -4,12 +4,14 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="footer-container">
-      <div className="footer">
-        <h5>(С) 2018-2020, STRELTSOV.ART</h5>
-        <div className="logo"></div>
-        <div className="footer-links-container">
-          <SocialMediaIcons />{" "}
+    <div className="footer">
+      <div className="footer-logo"></div>
+      <div className="footer-company-info">
+        <p>Dmitri Streltsov</p>
+        <p>Yekaterinburg</p>
+        <p>Phone</p>
+        <div className="footer-social-links">
+          <SocialMediaIcons />
         </div>
       </div>
     </div>
