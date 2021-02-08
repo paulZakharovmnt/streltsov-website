@@ -1,128 +1,163 @@
 .filter-bar {
-  /* background-color: aqua; */
-  /* width: 200px; */
-  position: absolute;
-  left: 0;
-  display: flex;
-  flex-direction: row;
-}
-.show-filters-button {
-  /* background-color: blueviolet; */
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  height: 180px;
-  width: 40px;
+  /* background-color: blue; */
+  width: 100%;
+  height: 100px;
+  margin-top: 60px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  border-bottom-right-radius: 12px;
-  border-top-right-radius: 12px;
-  cursor: pointer;
-  border-top: 3px solid rgba(255, 140, 0, 0.605);
-  border-bottom: 3px solid rgba(255, 140, 0, 0.605);
-  border-right: 3px solid rgba(255, 140, 0, 0.605);
-  transition: all 0.2s ease-in-out;
-}
-
-.show-filters-button:hover {
-  background-color: darkorange;
+  justify-content: flex-start;
   color: black;
-  /* box-shadow: 0 0 20px 3px darkorange; */
-  /* border: 3px solid black; */
 }
 
-.show-filters-button.opened {
-  /* background-color: rgba(255, 140, 0, 0.805); */
-  border-top: 3px solid rgba(255, 140, 0, 0.605);
-  border-bottom: 3px solid rgba(255, 140, 0, 0.605);
-  border-right: 3px solid rgba(255, 140, 0, 0.605);
-  /* color: black; */
+.filter-btn {
+  /* width: 225px; */
+  height: 50px;
+  /* background-color: tomato; */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.filter-btn > p {
+  /* background-color: white; */
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 50px;
+
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  transition: all 0.2s ease-in;
+}
+
+.filter-small-traingle {
+  border-color: rgba(0, 0, 0, 0.2) transparent transparent transparent;
+  border-style: solid;
+  border-width: 50px 60px 0px 0px;
+  height: 0px;
+  width: 0px;
+  transition: all 0.2s ease-in;
+}
+
+.filter-btn:hover > p {
+  background-color: white;
+  color: black;
+}
+.filter-btn:hover .filter-small-traingle {
+  border-color: white transparent transparent transparent;
+}
+
+.opened > p {
+  background-color: white;
+  color: black;
+}
+
+.opened > .filter-small-traingle {
+  border-color: white transparent transparent transparent;
+}
+.filters-container {
+  display: flex;
+  /* background-color: blueviolet; */
+  width: 85%;
+}
+
+.filter-type {
+  /* width: 200px; */
+  height: 50px;
+  /* background-color: tomato; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  /* margin-left: 10px; */
+  position: relative;
+  width: 25%;
+}
+
+.filter-type:hover .filter-props {
+  background-color: black;
   color: white;
 }
 
-.show-filters-button.opened:hover {
-  background-color: rgba(255, 140, 0);
-  color: black;
+.filter-type:hover .small-traingle-left {
+  border-color: transparent black transparent transparent;
 }
 
-.filters-container {
-  /* background-color: brown; */
-  height: 400px;
-  width: 200px;
+.filter-type:hover .small-traingle-right {
+  border-color: black transparent transparent transparent;
+}
+
+.filter-props {
+  background-color: white;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  cursor: pointer;
+  width: 60%;
+  transition: all 0.2s ease-in;
+}
+
+.filter-props > p {
+  margin: 2px;
+  /* background-color: blueviolet; */
+  width: 100%;
+}
+
+.small-traingle-left {
+  border-color: transparent white transparent transparent;
+  border-style: solid;
+  border-width: 50px 60px 0px 0px;
+  height: 0px;
+  width: 0px;
+  transition: all 0.2s ease-in;
+}
+
+.small-traingle-right {
+  border-color: white transparent transparent transparent;
+  border-style: solid;
+  border-width: 50px 60px 0px 0px;
+  height: 0px;
+  width: 0px;
+  transition: all 0.2s ease-in;
+}
+
+.filter-by-props-container {
+  height: 140px;
+  /* width: 100%; */
+  background-color: white;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 60px;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
-  border-top: 3px solid rgba(255, 140, 0, 0.6);
-  border-bottom: 3px solid rgba(255, 140, 0, 0.6);
-  /* box-shadow: 0 0 20px 3px darkorange; */
 }
 
-.left-border {
-  /* background-color: blanchedalmond; */
-  border-right: 3px solid rgba(255, 140, 0, 0.6);
-  height: 260px;
-  position: absolute;
-  right: 40px;
-  bottom: 0;
-}
-
-.filter-by-container {
-  /* background-color: cadetblue; */
+.filter-by-prop {
+  /* background-color: blueviolet; */
+  /* padding: 5px; */
+  border-top: 1px solid rgba(0, 0, 0, 0.301);
+  height: 33.33%;
   width: 100%;
-}
-
-.filter-by-container > select {
-  width: 90%;
-  overflow: hidden;
-  border: none;
-  /* background-color: chocolate; */
-  padding: 12px;
-  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+  transition: all 0.2s ease-in;
 }
 
-.filter-by-container > select::after {
-  content: "";
-  width: 0.8em;
-  height: 0.5em;
-  background-color: var(--select-arrow);
-  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-}
-
-@media screen and (max-width: 768px) {
-  .filter-bar {
-    position: relative;
-    flex-direction: column-reverse;
-  }
-
-  .show-filters-button {
-    /* background-color: khaki; */
-    writing-mode: horizontal-tb;
-    text-orientation: none;
-    margin: 0 auto;
-    height: 40px;
-    width: 90%;
-    border: none;
-    border-top: 2px solid darkorange;
-    border-bottom: 2px solid darkorange;
-    border-radius: 0;
-    letter-spacing: 7px;
-  }
-
-  .show-filters-button.opened {
-    border: none;
-  }
-
-  .filters-container {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .left-border {
-    display: none;
-  }
+.filter-by-prop:hover {
+  background-color: black;
+  color: white;
 }
