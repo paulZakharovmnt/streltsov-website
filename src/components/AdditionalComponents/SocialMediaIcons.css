@@ -28,7 +28,8 @@
   height: 60px;
   text-align: center;
   line-height: 60px;
-  background: #171515;
+  /* background: #171515; */
+  background: var(--black);
   border-radius: 50%;
   font-size: 30px;
   color: rgb(177, 174, 174);
@@ -44,7 +45,8 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: #d35400;
+  /* background: #d35400; */
+  background: white;
   transition: 0.5s;
   transform: scale(0.9);
   z-index: -1;
@@ -52,13 +54,17 @@
 
 .list-of-icons > li > a:hover::before {
   transform: scale(1.2);
-  box-shadow: 0 0 15px #d35400;
+  /* box-shadow: 0 0 15px #d35400; */
+  box-shadow: 0 0 15px white;
   filter: blur(3px);
 }
 
 .list-of-icons > li > a:hover {
-  color: #ffa502;
+  /* color: #ffa502;
   box-shadow: 0 0 25px #d35400;
-  text-shadow: 0 0 15px #d35400;
+  text-shadow: 0 0 15px #d35400; */
+  color: white;
+  box-shadow: 0 0 25px white;
+  text-shadow: 0 0 15px white;
   /* z-index: 3; */
 }
