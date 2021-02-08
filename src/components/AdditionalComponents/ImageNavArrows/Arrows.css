@@ -93,10 +93,20 @@
 
 @media screen and (max-width: 768px) {
   .left-arrow-container {
-    display: none;
+    height: 60px;
   }
 
   .right-arrow-container {
-    display: none;
+    height: 60px;
+  }
+
+  .arrow-right {
+    width: 40px;
+    height: 60px;
+  }
+
+  .arrow-left {
+    width: 40px;
+    height: 60px;
   }
 }
