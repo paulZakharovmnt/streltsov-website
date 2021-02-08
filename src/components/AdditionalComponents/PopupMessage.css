@@ -1,21 +1,32 @@
 .pop-up-message-container {
-  /* background-color: darkorchid; */
-
-  width: 400px;
-  padding: 0 10px;
-
-  border: 2px solid darkorange;
+  /* background-color: blue; */
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-end;
+  height: 50px;
+  color: black;
+  /* padding-left: 10px; */
+}
 
-  color: white;
+.popup-message {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 50px;
+  width: 80%;
 }
 
 .product-name-popup {
-  width: 100px;
-  margin: 0;
-  color: darkorange;
-  font-size: 18px;
+}
+
+.popup-triangle {
+  border-color: white transparent transparent transparent;
+  border-style: solid;
+  border-width: 50px 65px 0px 0px;
+  height: 0px;
+  width: 0px;
+  transition: all 0.2s ease-in-out;
 }
