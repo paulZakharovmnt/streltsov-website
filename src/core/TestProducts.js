@@ -1,68 +1,92 @@
-import image from "../img/Products/DSC03497.jpg";
-export const productsAllIds = ["Okusaka", "Onimusha", "Hitori", "Jet Lee"];
+export const productsAllIds = ["Hitori", "Amelia", "Lion", "Aircraft Skin"];
 export const productsByIdTEST = {
-  Okusaka: {
-    name: "Okusaka",
-    collection: "Samurai",
+  Hitori: {
+    name: "Hitori",
+    collection: "Dragon&Moon",
     type: "Pen",
     id: 12221,
-    price: 1400,
+    price: 700,
     material: "Titanium",
-    description: "Amazing pen made using",
+    description:
+      "Deep laser engraving and selective oxidation in Japanese style make this titanium pen really unique.",
     ttx: {
       width: 122,
       weight: 200,
     },
     image: "https://streltsov.art/wp-content/uploads/2018/11/2.jpg",
-    images: ["link1", "link2", "link3"],
+    images: [
+      "https://streltsov.art/wp-content/uploads/2021/01/IMG_5901.jpg",
+      "https://streltsov.art/wp-content/uploads/2021/01/IMG_5906.jpg",
+      "https://streltsov.art/wp-content/uploads/2021/01/IMG_5905.jpg",
+    ],
     inStock: true,
+    featured: true,
   },
-  Onimusha: {
-    name: "Onimusha",
-    collection: "Ninja",
-    type: "Pencil",
+  Amelia: {
+    name: "Amelia",
+    collection: "Klimt duet",
+    type: "Pen",
     id: 12222,
-    price: 500,
+    price: 900,
     material: "Aluminium",
-    description: "From new collection",
+    description:
+      "Beautiful duet of titanium pen&pencil with a matte cases and laser engraving in a delicate pattern inspired by the art of famous painter. Bolt action pen with removable clip. Pencil suits 0.5mm leads.",
+
     ttx: {
       width: 122,
       weight: 200,
     },
     image: "https://streltsov.art/wp-content/uploads/2018/11/26-10.jpg",
-    images: ["link1", "link2", "link3"],
+    images: [
+      "https://streltsov.art/wp-content/uploads/2021/01/IMG_5921-2.jpg",
+      "https://streltsov.art/wp-content/uploads/2021/01/IMG_5927.jpg",
+      "https://streltsov.art/wp-content/uploads/2021/01/IMG_5922.jpg",
+    ],
     inStock: true,
+    featured: true,
   },
-  Hitori: {
-    name: "Hitori",
+  Lion: {
+    name: "Lion",
     collection: "Ninja",
-    type: "Pen",
+    type: "Pencil",
     id: 12223,
-    price: 600,
+    price: 400,
     material: "Titanium",
-    description: "Cool pen",
+    description:
+      "A titanium pencil with a matte case and laser engraving in the form of a card will be a decoration on your desktop and a wonderful gift for your colleagues and partners. Suits 0,5 mm leads",
     ttx: {
       width: 122,
       weight: 200,
     },
     image: "https://streltsov.art/wp-content/uploads/2018/11/DSC02013.jpg",
-    images: ["link1", "link2", "link3"],
+    images: [
+      "https://streltsov.art/wp-content/uploads/2020/08/IMG_4662.jpg",
+      "https://streltsov.art/wp-content/uploads/2020/08/IMG_4664.jpg",
+      "https://streltsov.art/wp-content/uploads/2020/08/IMG_4665.jpg",
+    ],
     inStock: true,
+    featured: true,
   },
-  "Jet Lee": {
-    name: "Jet Lee",
+  "Aircraft Skin": {
+    name: "Aircraft Skin",
     collection: "Samurai",
     type: "Pencil",
     id: 12224,
     price: 700,
     material: "Aluminium",
-    description: "Cool pen",
+    description:
+      "A titanium pencil with a matte case and laser engraving in the form of a card will be a decoration on your desktop and a wonderful gift for your colleagues and partners.",
     ttx: {
       width: 122,
       weight: 200,
     },
     image: "https://streltsov.art/wp-content/uploads/2018/11/DSC03275.jpg",
-    images: ["link1", "link2", "link3"],
+    images: [
+      "https://streltsov.art/wp-content/uploads/2020/08/IMG_4672.jpg",
+      "https://streltsov.art/wp-content/uploads/2020/08/IMG_4674.jpg",
+      "https://streltsov.art/wp-content/uploads/2020/08/IMG_4675.jpg",
+    ],
     inStock: true,
+    featured: false,
   },
 };
