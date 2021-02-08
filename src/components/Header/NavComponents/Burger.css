@@ -1,0 +1,154 @@
+.burger-container {
+}
+
+.burger-container {
+  display: none;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.burger {
+}
+
+.burger {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger-line {
+  display: block;
+  width: 40px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.burger-line + .burger-line {
+  margin-top: 8px;
+}
+
+.active .burger-line:nth-child(1) {
+  animation: ease 0.7s top forwards;
+}
+
+.burger-line:nth-child(1) {
+  animation: ease 0.7s top-2 forwards;
+}
+
+.active .burger-line:nth-child(2) {
+  animation: ease 0.7s scaled forwards;
+}
+
+.burger-line:nth-child(2) {
+  animation: ease 0.7s scaled-2 forwards;
+}
+
+.active .burger-line:nth-child(3) {
+  animation: ease 0.7s bottom forwards;
+}
+
+.burger-line:nth-child(3) {
+  animation: ease 0.7s bottom-2 forwards;
+}
+
+@keyframes top {
+  0% {
+    top: 0;
+    transform: rotate(0);
+  }
+  50% {
+    top: 11px;
+    transform: rotate(0);
+  }
+  100% {
+    top: 11px;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes top-2 {
+  0% {
+    top: 11px;
+    transform: rotate(45deg);
+  }
+  50% {
+    top: 11px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bottom {
+  0% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+  50% {
+    bottom: 9px;
+    transform: rotate(0);
+  }
+  100% {
+    bottom: 9px;
+    transform: rotate(135deg);
+  }
+}
+
+@keyframes bottom-2 {
+  0% {
+    bottom: 9px;
+    transform: rotate(135deg);
+  }
+  50% {
+    bottom: 9px;
+    transform: rotate(0);
+  }
+  100% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+}
+
+@keyframes scaled {
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes scaled-2 {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .burger-container {
+    display: flex;
+    background-color: white;
+  }
+  .burger-line {
+    background-color: black;
+  }
+}
