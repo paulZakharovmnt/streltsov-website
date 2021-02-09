@@ -1,7 +1,7 @@
 const initialState = {
   byPrice: "",
   byCollection: "",
-  byMaterial: "",
+  ByPenType: "",
 };
 
 const filtersReducer = (state = initialState, action) => {
@@ -10,8 +10,8 @@ const filtersReducer = (state = initialState, action) => {
       return { ...state, byPrice: action.payload };
     case "CHANGE_COLLECTION_FILTER":
       return { ...state, byCollection: action.payload };
-    case "CHANGE_MATERIAL_FILTER":
-      return { ...state, byMaterial: action.payload };
+    case "CHANGE_PEN_TYPE_FILTER":
+      return { ...state, ByPenType: action.payload };
     default:
       return state;
   }
