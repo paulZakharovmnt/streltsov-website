@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 
 const useHideOnScrolled = () => {
-  const [hiddenNav, setHiddenNav] = useState(false);
+  const [hiddenNav, setHiddenNav] = useState(true);
   const [hiddenBottomIcons, setHiddenBottomIcons] = useState(false);
-
-  // const forced
 
   const handleScroll = () => {
     const top = window.pageYOffset || document.documentElement.scrollTop;
-    setHiddenNav(top <= 200);
+    setHiddenNav(top < 200);
     setHiddenBottomIcons(top >= 200);
   };
 
