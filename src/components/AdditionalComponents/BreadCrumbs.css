@@ -1,0 +1,62 @@
+.breadCrumbs-container {
+  /* background-color: blueviolet; */
+  position: absolute;
+  top: 140px;
+  left: 14%;
+  right: 14%;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.breadCrumbs {
+  display: flex;
+  align-items: center;
+  /* background-color: blue; */
+}
+
+.back-crumb {
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.crumb-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: grey;
+}
+
+.crumb {
+  padding: 0 7px;
+  text-decoration: none;
+  border: none;
+  color: grey;
+  cursor: pointer;
+  transition: color 0.2s ease-in;
+}
+
+.crumb:hover {
+  color: white;
+}
+
+.current-crumb {
+  color: white;
+  padding: 0 7px;
+}
+
+/* .crumb:last-child {
+  color: white;
+} */
+
+@media screen and (max-width: 768px) {
+  .breadCrumbs-container {
+    left: 20px;
+    right: 0;
+    top: 110px;
+  }
+}

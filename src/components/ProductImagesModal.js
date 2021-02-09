@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import LeftArrow from "./AdditionalComponents/ImageNavArrows/LeftArrow";
 import RightArrow from "./AdditionalComponents/ImageNavArrows/RightArrow";
 import "./ProductImagesModal.css";
 
-const ProductImagesModal = ({
-  listOfImages,
-  showingImageId,
-  setShowProductPhotosModal,
-  setShowingImageId,
-  showNextImage,
-  showPrevImage,
-}) => {
+const ProductImagesModal = ({ currentProduct, setShowProductPhotosModal }) => {
+  const [showingImageId, setShowingImageId] = useState(0);
+
+  const showNextImage = () => {
+    if (showingImageId === currentProduct.images.length - 1) {
+      setShowingImageId(0);
+      return;
+    }
+    setShowingImageId(showingImageId + 1);
+  };
+
+  const showPrevImage = () => {
+    if (showingImageId === 0) {
+      setShowingImageId(currentProduct.images.length - 1);
+      return;
+    }
+    setShowingImageId(showingImageId - 1);
+  };
+
   return (
     <div className="black-layout">
-      <div className="product-photo-container">
+      <div className="photo-container">
         <div
           className="close-modal-container"
           onClick={() => setShowProductPhotosModal(false)}
@@ -23,31 +34,27 @@ const ProductImagesModal = ({
         <div className="photo-container-top">
           <LeftArrow showPrevImage={showPrevImage} />
           <div className="product-photo">
-            <img src={listOfImages[showingImageId]} alt="" />
-            {/* {listOfImages.map((image, id) => (
-              <img key={id} src={image} alt="" />
-            ))} */}
+            <img src={currentProduct.images[showingImageId]} alt="" />
           </div>
 
           <RightArrow showNextImage={showNextImage} />
         </div>
-        <div className="photo-container-bottom">
-          <div className="image-counter">
-            {listOfImages.map((image, id) => (
-              <div className="small-image-preview" key={id}>
-                <img
-                  className={
-                    showingImageId === id
-                      ? "small-image selected-small-image"
-                      : "small-image"
-                  }
-                  src={image}
-                  alt=""
-                  onClick={() => setShowingImageId(id)}
-                />
-              </div>
-            ))}
-          </div>
+
+        <div className="image-counter">
+          {currentProduct.images.map((image, id) => (
+            <div className="small-image-preview" key={id}>
+              <img
+                className={
+                  showingImageId === id
+                    ? "small-image selected-small-image"
+                    : "small-image"
+                }
+                src={image}
+                alt=""
+                onClick={() => setShowingImageId(id)}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

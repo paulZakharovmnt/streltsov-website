@@ -51,9 +51,15 @@ export const changeCollectionFilter = (filterProp) => {
     payload: filterProp,
   };
 };
-export const changeMaterialFilter = (filterProp) => {
+export const changePenTypeFilter = (filterProp) => {
   return {
-    type: "CHANGE_MATERIAL_FILTER",
+    type: "CHANGE_PEN_TYPE_FILTER",
     payload: filterProp,
+  };
+};
+export const handleShowCartPreview = (showCart) => {
+  return {
+    type: "SHOW_CART_PREVIEW",
+    payload: showCart,
   };
 };

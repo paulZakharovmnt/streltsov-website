@@ -6,7 +6,7 @@
   --font-semi-bold: 600;
   --font-bold: 700;
 
-  --black: #000000;
+  --black: #191919;
   --blue: #14213d;
   --orange: #fca311;
   --platinum: #e5e5e5;
@@ -36,44 +36,68 @@
   text-align: center;
   /* background-color: #282c34; */
   /* background-color: brown; */
-  height: 100%;
+  /* height: 100%; */
   min-height: 100vh;
-  display: flex;
+  width: 100%;
+  /* display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-/* 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  box-sizing: border-box; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+  /* height: 160px; */
+  /* background-color: coral; */
+  width: 100%;
+  /* height: 160px; */
+  /* height: 160px; */
+  /* z-index: 1000; */
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+footer {
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.cp-enter {
+  transform: translateX(100%);
+}
+.cp-enter-active {
+  transform: translateX(0);
+  /* opacity: 1; */
+  transition: all 1s;
+}
+
+/* .os-enter-done {
+  transform: translateX(0);
+} */
+.cp-exit {
+  transform: translateX(0);
+}
+
+.cp-exit-active {
+  /* opacity: 0; */
+  transform: translateX(100%);
+  transition: all 1s;
+}
+
+/* .cp-exit-done {
+  opacity: 0;
 } */
 
 @media screen and (max-width: 768px) {
   .App {
     min-height: 100vh;
+  }
+  header {
+    /* background-color: brown; */
+    /* height: 120px;
+    position: fixed;
+    z-index: 1000; */
+  }
+  footer {
+    /* display: none; */
   }
 }
 

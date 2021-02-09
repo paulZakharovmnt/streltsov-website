@@ -1,84 +1,198 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import "./FilterBar.css";
+import Filter from "./Filter";
 import { useDispatch, useSelector } from "react-redux";
 import {
   changePriceSort,
   changeCollectionFilter,
-  changeMaterialFilter,
+  changePenTypeFilter,
 } from "../../../redux/actions/actions";
 
 const FilterBar = ({}) => {
   const [showFilters, setShowFilters] = useState(false);
-  const filters = useSelector((state) => state.filtersReducer);
+  const [showFilterByMaterial, setShowFilterByMaterial] = useState(true);
+  const [showFilterByCollection, setShowFilterByCollection] = useState(false);
+  const [showFilterByPrice, setShowFilterByPrice] = useState(false);
+  // const filters = useSelector((state) => state.filtersReducer);
+
+  const productsById = useSelector((state) => state.productsByIdReducer);
+  const productsAllIds = useSelector((state) => state.productsAllIdsReducer);
   const dispatch = useDispatch();
 
   const clearFilters = () => {
-    dispatch(changeMaterialFilter(""));
+    dispatch(changePenTypeFilter(""));
     dispatch(changeCollectionFilter(""));
     dispatch(changePriceSort(""));
   };
 
-  const showFiltersBTNClasses = classNames("show-filters-button", {
+  // console.log(filters);
+
+  useEffect(() => {
+    setShowFilterByMaterial(false);
+    setShowFilterByCollection(false);
+    setShowFilterByPrice(false);
+  }, []);
+
+  const showFiltersBTNClasses = classNames("filter-btn", {
     opened: showFilters,
   });
 
-  //   const filterSideBarClasses = classNames("", {});
+  const filters = {
+    byCollection: {
+      name: "By Collection",
+      value: "",
+    },
+    byPenType: {
+      name: "By Pen Type",
+      value: "",
+    },
+    byPrice: {
+      name: "By Price",
+      value: "",
+    },
+  };
+
+  // console.log(productsById);
+  // console.log(productsAllIds);
+
+  // console.log(filters.byPenType);
+
+  // Object.keys(filters).map((filter) => console.log(filter));
+
   return (
     <div className="filter-bar">
-      {showFilters && (
-        <div className="filters-container">
-          <div className="filter-by-container">
-            <p>By material:</p>
-            <select
-              onChange={(event) =>
-                dispatch(changeMaterialFilter(event.target.value))
-              }
-              value={filters.byMaterial}
-            >
-              <option value="">Show all</option>
-              <option value="Titanium">Titanium</option>
-              <option value="Aluminium">Aluminium</option>
-            </select>
-          </div>
-          <div className="filter-by-container">
-            <p> Show Collection:</p>
-            <select
-              onChange={(event) =>
-                dispatch(changeCollectionFilter(event.target.value))
-              }
-              value={filters.byCollection}
-            >
-              <option value="">Show all</option>
-              <option value="Samurai">Samurai</option>
-              <option value="Ninja">Ninja</option>
-            </select>
-          </div>
-          <div className="filter-by-container">
-            <p>Sort By Price:</p>
-            <select
-              onChange={(event) => {
-                dispatch(changePriceSort(event.target.value));
-              }}
-              value={filters.byPrice}
-            >
-              <option value="">Type of sorting</option>
-              <option value="highToLow">high to low</option>
-              <option value="lowToHigh">low to high</option>
-            </select>
-          </div>
-          <div>
-            <button onClick={() => clearFilters()}>Clear all Filters</button>
-          </div>
-          <div className="left-border"></div>
-        </div>
-      )}
       <div
         className={showFiltersBTNClasses}
         onClick={() => setShowFilters(!showFilters)}
       >
-        Filters
+        <p>Filters</p>
+        <div className="filter-small-traingle"></div>
       </div>
+      {showFilters && (
+        <div className="filters-container">
+          {Object.keys(filters).map((filter) => {
+            return <Filter filters={filters} filter={filter} />;
+          })}
+
+          {/* <div className="filter-type">
+            <div className="small-traingle-left"></div>
+            <div
+              className="filter-props"
+              onClick={() => setShowFilterByMaterial(!showFilterByMaterial)}
+            >
+              <p>By Pen type:</p>
+              <p>
+                {filters.byPenType.value === ""
+                  ? "All"
+                  : filters.byPenType.value}
+              </p>
+            </div>
+
+            <div className="small-traingle-right"></div>
+            {showFilterByMaterial && (
+              <div className="filter-by-props-container">
+                <div
+                  className="filter-by-prop"
+                  onClick={() => dispatch(changePenTypeFilter(""))}
+                >
+                  All
+                </div>
+                <div
+                  className="filter-by-prop"
+                  onClick={() => dispatch(changePenTypeFilter("Ballpoint"))}
+                >
+                  Ballpoint
+                </div>
+                <div
+                  className="filter-by-prop"
+                  onClick={() => dispatch(changePenTypeFilter("Fountain"))}
+                >
+                  Fountain
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="filter-type">
+            <div className="small-traingle-left"></div>
+            <div
+              className="filter-props"
+              onClick={() => setShowFilterByCollection(!showFilterByCollection)}
+            >
+              <p>By Collection:</p>
+              <p>
+                {filters.byCollection.value === ""
+                  ? "All"
+                  : filters.byCollection.value}
+              </p>
+            </div>
+            <div className="small-traingle-right"></div>
+            {showFilterByCollection && (
+              <div className="filter-by-props-container">
+                <div
+                  className="filter-by-prop"
+                  onClick={() => dispatch(changeCollectionFilter(""))}
+                >
+                  All
+                </div>
+                <div
+                  className="filter-by-prop"
+                  onClick={() =>
+                    dispatch(changeCollectionFilter("Dragon&Moon"))
+                  }
+                >
+                  Dragon&Moon
+                </div>
+                <div
+                  className="filter-by-prop"
+                  onClick={() => dispatch(changeCollectionFilter("Klimt duet"))}
+                >
+                  Klimt duet
+                </div>
+              </div>
+            )}
+          </div> */}
+          {/* <div className="filter-type">
+            <div className="small-traingle-left"></div>
+            <div
+              className="filter-props"
+              onClick={() => setShowFilterByPrice(!showFilterByPrice)}
+            >
+              <p>By Price:</p>
+              <p>None</p>
+            </div>
+            <div className="small-traingle-right"></div>
+            {showFilterByPrice && (
+              <div className="filter-by-props-container">
+                <div
+                  className="filter-by-prop"
+                  onClick={() => dispatch(changePenTypeFilter(""))}
+                >
+                  All
+                </div>
+                <div
+                  className="filter-by-prop"
+                  onClick={() => dispatch(changePenTypeFilter("Ballpoint"))}
+                >
+                  Ballpoint
+                </div>
+                <div
+                  className="filter-by-prop"
+                  onClick={() => dispatch(changePenTypeFilter("Fountain"))}
+                >
+                  Fountain
+                </div>
+              </div>
+            )}
+          </div> */}
+          <div className="filter-type">
+            <div className="small-traingle-left"></div>
+            <div className="filter-props">
+              <p>Clear all Filters</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
