@@ -1,5 +1,6 @@
 import React from "react";
 import ProductMenu from "../ProductMenu";
+import { CSSTransition } from "react-transition-group";
 import "./LinkList.css";
 
 const LinkList = ({
@@ -14,11 +15,22 @@ const LinkList = ({
           <p onClick={() => setShowProductsMenu(!showProductsMenu)}>Products</p>
           <div className="small-traingle"></div>
         </div>
-        {showProductsMenu && (
+        <CSSTransition
+          in={showProductsMenu}
+          timeout={1000}
+          mountOnEnter
+          unmountOnExit
+          classNames="prod-mm-animation"
+        >
           <div className="products-menu-mobile">
             <ProductMenu setShowSideMenu={setShowSideMenu} />
           </div>
-        )}
+        </CSSTransition>
+        {/* {showProductsMenu && (
+          <div className="products-menu-mobile">
+            <ProductMenu setShowSideMenu={setShowSideMenu} />
+          </div>
+        )} */}
       </li>
       <li>
         <p>Gallery</p>
