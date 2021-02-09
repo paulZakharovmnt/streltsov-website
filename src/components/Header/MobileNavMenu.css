@@ -22,6 +22,7 @@
   /* background-color: white;
   height: 100%;
    */
+  transition: all 1s ease-in;
 }
 .mm-right-side {
   /* background-color: blue; */
@@ -92,6 +93,7 @@
 .mm-list-links {
   /* background-color: brown; */
   height: 800px;
+  transition: all 1s ease-in;
 }
 
 .mm-langauge-box {
