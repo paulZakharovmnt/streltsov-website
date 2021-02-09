@@ -6,13 +6,41 @@ export const directLinks = ["gallery", "about"];
 export const childLinks = {
   Pens: {
     sublinks: ["Pen", "Pencil"],
-    pencil_image: pencil,
-    pen_image: pen,
+    linksData: {
+      Pen: {
+        name: "Pen",
+        image: pen,
+      },
+      Pencil: {
+        name: "Pencil",
+        image: pencil,
+      },
+    },
   },
   Jewelry: {
     sublinks: ["Pendants", "Bracelets"],
+    linksData: {
+      Pendants: {
+        name: "Pendants",
+        image: pen,
+      },
+      Bracelets: {
+        name: "Bracelets",
+        image: pencil,
+      },
+    },
   },
   Accessory: {
     sublinks: ["Keychains", "Beads"],
+    linksData: {
+      Keychains: {
+        name: "Keychains",
+        image: pen,
+      },
+      Beads: {
+        name: "Beads",
+        image: pencil,
+      },
+    },
   },
 };
