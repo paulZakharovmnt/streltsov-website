@@ -40,17 +40,17 @@ const ProductInfoPage = () => {
     setProductIsInCart(false);
   }, [productsAllIdsInCart, productId]);
 
-  // useEffect(() => {
-  //   if (showPopUpMessage) {
-  //     setTimeout(() => {
-  //       setShowPopUpMessage(false);
-  //     }, 4000);
+  useEffect(() => {
+    if (showPopUpMessage) {
+      setTimeout(() => {
+        setShowPopUpMessage(false);
+      }, 4000);
 
-  //     return () => {
-  //       setShowPopUpMessage(false);
-  //     };
-  //   }
-  // }, [showPopUpMessage]);
+      return () => {
+        setShowPopUpMessage(false);
+      };
+    }
+  }, [showPopUpMessage]);
 
   const handleAddProductToCartClick = () => {
     if (productIsInCart) {
@@ -108,7 +108,7 @@ const ProductInfoPage = () => {
             <div className="add-to-cart-traingle"></div>
           </div>
         </div>
-        {showPopUpMessage && <PopupMessage />}
+        {showPopUpMessage && <PopupMessage currentProduct={currentProduct} />}
       </div>
       <div className="product-photo-container">
         <img
