@@ -22,15 +22,6 @@ const MobileNavMenu = ({
           <LanguageSelector />
         </div>
       </div>
-      <div className="mm-right-side">
-        {/* <div className="cart-burder-mobile-container">
-          <CartIcon showSideMenu={showSideMenu} />
-          <Burger
-            setShowSideMenu={setShowSideMenu}
-            showSideMenu={showSideMenu}
-          />
-        </div> */}
-      </div>
     </div>
   );
 };
