@@ -26,7 +26,6 @@ const ProductComponent = ({
               onClick={() => setShowProductsMenu(false)}
             >
               {childLink}
-              {/* <li></li> */}
             </Link>
           ))}
         </ul>
