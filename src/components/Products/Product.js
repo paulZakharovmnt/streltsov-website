@@ -7,7 +7,6 @@ const Product = ({ listImg, product, productsById }) => {
   console.log(productInfo);
 
   return (
-    // <div className="productByType-list-product-container">
     <Link
       className="productByType-list-product-container"
       to={`/products/${childLink}/${product}`}
