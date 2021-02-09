@@ -3,9 +3,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   height: 50px;
   color: black;
+  padding-left: 140px;
+  padding-top: 20px;
   /* padding-left: 10px; */
 }
 
@@ -29,4 +31,10 @@
   height: 0px;
   width: 0px;
   transition: all 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .pop-up-message-container {
+    padding-left: 40px;
+  }
 }
