@@ -29,7 +29,7 @@ const Home = () => {
 
   setTimeout(() => {
     showNextImage();
-    return () => clearTimeout();
+    return () => clearTimeout(showNextImage());
   }, 7000);
 
   return (
@@ -38,6 +38,7 @@ const Home = () => {
         <SwitchTransition mode="out-in">
           <CSSTransition
             key={showingImageId}
+            timeout={1000}
             addEndListener={(node, done) =>
               node.addEventListener("transitionend", done, false)
             }
