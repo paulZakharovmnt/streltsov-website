@@ -7,7 +7,6 @@ const BreadCrumbs = () => {
   const breadcrumbs = useBreadcrumbs();
   return (
     <div className="breadCrumbs-container">
-      {/* <div>Bread</div> */}
       {breadcrumbs.length <= 1 ? null : (
         <div className="breadCrumbs">
           <Link
