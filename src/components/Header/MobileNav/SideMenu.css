@@ -1,0 +1,250 @@
+.sidemenu {
+  background-color: var(--black);
+  color: white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1500;
+}
+
+.links-block {
+  /* background-color: blueviolet; */
+  width: 100%;
+  height: 92%;
+}
+.language-block {
+  /* background-color: cadetblue; */
+  width: 100%;
+  height: 8%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.m-links-list {
+  /* background-color: chocolate; */
+
+  list-style: none;
+  padding: 0;
+  padding-left: 30px;
+  padding-top: 20px;
+  margin: 0;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* justify-content: space-evenly; */
+  transition: all 1s ease-in;
+  /* animation: lineInserted; */
+}
+
+.m-links-list > li {
+  /* background-color: violet; */
+  width: 90%;
+}
+
+.main-link-btn {
+  /* background-color: cornflowerblue; */
+  width: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 30px;
+  transition: all 1s ease-in;
+  margin-top: 60px;
+}
+
+.main-link-btn > p,
+.m-parent-link {
+  /* background-color: darkblue; */
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 25px;
+  transition: all 0.2s ease-in;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: grey;
+  text-decoration: none;
+}
+.m-small-traingle {
+  border-color: transparent transparent transparent transparent;
+  border-style: solid;
+  border-width: 30px 36px 0px 0px;
+  height: 0px;
+  width: 0px;
+  transition: all 0.2s ease-in;
+}
+
+.mProductMenuSelected > p {
+  background-color: white;
+  color: black;
+}
+
+.mProductMenuSelected > .m-small-traingle {
+  border-color: white transparent transparent transparent;
+}
+
+.m-products {
+}
+
+.ul-list {
+  /* background-color: teal; */
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  height: 340px;
+  /* min-height: 100px; */
+  transition: all 0.3s ease-in;
+}
+
+.m-products-types {
+  /* background-color: tomato; */
+  padding-top: 10px;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  transition: all 0.3s ease-in;
+}
+
+.m-types-head {
+  /* background-color: brown; */
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid white;
+}
+
+.m-types-head > p {
+  margin: 0;
+  /* background-color: crimson; */
+  padding: 5px 10px;
+  text-transform: uppercase;
+  color: rgb(189, 189, 189);
+
+  /* padding: 5px; */
+}
+.m-show-btn {
+  /* background-color: yellow; */
+}
+.m-sublinks {
+  /* background-color: blue; */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+
+  height: 80px;
+}
+
+.m-link {
+  /* background-color: red; */
+  margin: 0;
+  padding: 5px 0px 5px 10px;
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+}
+
+/* HOVER */
+
+.main-link-btn:hover > p {
+  background-color: white;
+  color: black;
+}
+
+.main-link-btn:hover .m-parent-link {
+  background-color: white;
+  color: black;
+}
+
+.main-link-btn:hover > .m-small-traingle {
+  border-color: white transparent transparent transparent;
+}
+
+.m-pr-enter {
+  transform: translateX(300px);
+  transition: all 0.5s ease-in;
+}
+.m-pr-enter-active {
+  transform: translateX(0);
+}
+.m-pr-exit {
+  transform: translateX(0);
+  transition: all 0.5s ease-out;
+}
+.m-pr-exit-active {
+  transform: translateX(300px);
+}
+
+.m-sub-enter {
+  height: 0;
+  transition: all 0.5s ease-in;
+}
+.m-sub-enter-active {
+  height: 80px;
+}
+.m-sub-exit {
+  height: 80px;
+  transition: all 0.5s ease-in;
+}
+.m-sub-exit-active {
+  height: 0;
+}
+
+.openedUl {
+  animation-name: test;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+.closedUl {
+  animation-name: test1;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-delay: 0.3s;
+}
+
+@keyframes test {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 340px;
+  }
+}
+
+@keyframes test1 {
+  0% {
+    height: 340px;
+  }
+  100% {
+    height: 0px;
+  }
+}
+
+@keyframes test2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}
+
+@keyframes test3 {
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

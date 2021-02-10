@@ -1,9 +1,13 @@
-.nav {
+.nav-desktop {
 }
 
 .nav-mobile {
   display: none;
 }
+/* .nav {
+}
+
+
 .nav-box {
   position: fixed;
   z-index: 200;
@@ -34,7 +38,6 @@
   width: 50%;
   height: 50px;
   margin-left: 20px;
-  /* background-image: url(../../img/logo.png); */
   background-image: url(../../img/logo.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -53,7 +56,6 @@
 }
 
 .nav-link-list-desktop {
-  /* background-color: coral; */
   width: 85%;
 }
 .nav-language-desktop {
@@ -70,12 +72,10 @@
 }
 
 .pmd-enter {
-  /* transform: translateY(-300px); */
   opacity: 0;
   transition: all 0.3s ease-in;
 }
 .pmd-enter-active {
-  /* transform: translateY(0); */
   opacity: 1;
 }
 .pmd-exit {
@@ -86,13 +86,7 @@
   opacity: 0;
 }
 
-.nav-traingle {
-  border-color: white transparent transparent transparent;
-  border-style: solid;
-  border-width: 100px 130px 0px 0px;
-  height: 0px;
-  width: 0px;
-}
+ */
 
 @media screen and (max-width: 768px) {
   .nav {

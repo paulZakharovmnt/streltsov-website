@@ -1,0 +1,263 @@
+.sidemenu {
+  background-color: var(--black);
+  color: white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1500;
+}
+
+.links-block {
+  /* background-color: blueviolet; */
+  width: 100%;
+  height: 92%;
+}
+.language-block {
+  /* background-color: cadetblue; */
+  width: 100%;
+  height: 8%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.m-links-list {
+  background-color: chocolate;
+  /* min-height: 400px; */
+  /* transition: all ease-in 1s; */
+
+  /* list-style: none;
+    padding: 0;
+    padding-left: 30px;
+    padding-top: 20px;
+    margin: 0;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; */
+  /* justify-content: space-evenly; */
+  /* transition: all 1s ease-in; */
+  /* animation: lineInserted; */
+}
+
+.m-links-list > li {
+  background-color: violet;
+  /* min-height: 30px;
+    transition: all 1s ease-in; */
+  /* width: 90%; */
+  /* min-height: 100px; */
+  /* transition: all 1s ease-in; */
+}
+
+.main-link-btn {
+  /* background-color: cornflowerblue;s */
+  width: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 30px;
+  transition: all 1s ease-in;
+  margin-top: 60px;
+}
+
+.main-link-btn > p {
+  /* background-color: darkblue; */
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 25px;
+  transition: all 0.2s ease-in;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: grey;
+}
+.m-small-traingle {
+  border-color: transparent transparent transparent transparent;
+  border-style: solid;
+  border-width: 30px 36px 0px 0px;
+  height: 0px;
+  width: 0px;
+  transition: all 0.2s ease-in;
+}
+
+.mProductMenuSelected > p {
+  background-color: white;
+  color: black;
+}
+
+.mProductMenuSelected > .m-small-traingle {
+  border-color: white transparent transparent transparent;
+}
+
+.m-products {
+}
+
+.ul-list {
+  background-color: teal;
+  height: 300px;
+  /* min-height: 300px; */
+  width: 100px;
+  /* list-style: none;
+    width: 100%;
+    padding: 0; */
+  /* height: 340px; */
+  /* min-height: 100px;
+    transition: all 0.3s ease-in; */
+}
+
+.m-products-types {
+  background-color: tomato;
+  /* width: 100%; */
+  /* height: 100px; */
+  /* margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all 0.3s ease-in; */
+}
+
+.m-types-head {
+  background-color: brown;
+  /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    padding: 5px 0;
+    transition: width 0.5s ease-in; */
+}
+
+/* .m-types-head:hover {
+    width: 100%;
+  } */
+
+.m-types-head > p {
+  margin: 0;
+}
+.m-show-btn {
+  background-color: yellow;
+}
+.m-sublinks {
+  background-color: blue;
+  height: 80px;
+}
+
+/* HOVER */
+
+.main-link-btn:hover > p {
+  background-color: white;
+  color: black;
+}
+
+.main-link-btn:hover > .m-small-traingle {
+  border-color: white transparent transparent transparent;
+}
+
+.m-pr-enter {
+  height: 0;
+  transition: height 0.5s ease-in;
+  /* opacity: 0;
+    transition: opacity 1s ease-in; */
+
+  /* opacity: 0; */
+  /* transition: all 1s ease-in;
+    height: 0; */
+  /* 
+    transition: height 0.3s ease-in; */
+}
+.m-pr-enter-active {
+  height: 300px;
+  /* opacity: 1; */
+  /* min-height: 200px; */
+  /* height: 200px; */
+}
+.m-pr-exit {
+  height: 300px;
+  transition: all 0.3s ease-out;
+}
+.m-pr-exit-active {
+  height: 0;
+}
+
+.m-sub-enter {
+  height: 0;
+  transition: all 0.5s ease-in;
+}
+.m-sub-enter-active {
+  height: 80px;
+}
+.m-sub-exit {
+  height: 80px;
+  transition: all 0.5s ease-in;
+}
+.m-sub-exit-active {
+  height: 0;
+}
+
+.openedUl {
+  /* animation-name: test;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1; */
+}
+
+.closedUl {
+  /* animation-name: test1;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-delay: 0.3s; */
+}
+
+.btnOpened {
+  width: 100%;
+}
+
+.btnClosed {
+  /* animation-name: test3;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1; */
+  /* animation-delay: 0.3s; */
+  /* transform: translateX(0); */
+}
+
+@keyframes test {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 240px;
+  }
+}
+
+@keyframes test1 {
+  0% {
+    height: 240px;
+  }
+  100% {
+    height: 0px;
+  }
+}
+
+@keyframes test2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}
+
+@keyframes test3 {
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

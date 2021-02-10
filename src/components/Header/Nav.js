@@ -1,7 +1,7 @@
 import React from "react";
 import "./Nav.css";
-import DesktopNavPanel from "./DesktopNavPanel";
-import MobileNavPanel from "./MobileNavPanel";
+import DesktopNavPanel from "./DesktopNav/DesktopNavPanel";
+import MobileNavPanel from "./MobileNav/MobileNavPanel";
 
 const Nav = () => {
   return (

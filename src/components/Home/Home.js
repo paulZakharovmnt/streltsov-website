@@ -3,6 +3,9 @@ import "./Home.css";
 import image from "../../img/333.jpg";
 import image1 from "../../img/Products/DSC09312.jpg";
 import image2 from "../../img/Products/DSC01185.jpg";
+import red from "../../img/home/red.jpg";
+import blue from "../../img/home/blue.jpg";
+import skull from "../../img/home/skull.jpg";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import imageAboutBig from "../../img/DSC01463.jpg";
 import FeaturedProducts from "./FeaturedProducts";
@@ -10,6 +13,7 @@ import FeaturedProducts from "./FeaturedProducts";
 const Home = () => {
   const [showingImageId, setShowigImageId] = useState(0);
   const images = [image, image1, image2];
+  const mobileImages = [red, blue, skull];
 
   const showPrevImage = () => {
     if (showingImageId === 0) {
@@ -47,12 +51,21 @@ const Home = () => {
             <img src={images[showingImageId]} alt="" />
           </CSSTransition>
         </SwitchTransition>
-
-        {/* <div className="homepage-logo"></div> */}
-        {/* <LeftArrow showPrevImage={showPrevImage} />
-        <RightArrow showNextImage={showNextImage} /> */}
       </div>
-      {/* <div className="homepage-featured">Features</div> */}
+      <div className="moblie-slider">
+        <SwitchTransition mode="out-in">
+          <CSSTransition
+            key={showingImageId}
+            timeout={1000}
+            addEndListener={(node, done) =>
+              node.addEventListener("transitionend", done, false)
+            }
+            classNames="fade"
+          >
+            <img src={mobileImages[showingImageId]} alt="" />
+          </CSSTransition>
+        </SwitchTransition>
+      </div>
       <FeaturedProducts />
       <div className="homepage-about">
         <div className="homepage-about-images">
