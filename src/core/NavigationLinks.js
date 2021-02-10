@@ -2,7 +2,7 @@ import pen from "../img/headers/pen.jpg";
 import pencil from "../img/headers/pencil.jpg";
 
 export const linksWithOptions = ["Pens", "Jewelry", "Accessory"];
-export const directLinks = ["gallery", "about"];
+export const directLinks = ["Gallery", "About"];
 export const childLinks = {
   Pens: {
     sublinks: ["Pen", "Pencil"],
