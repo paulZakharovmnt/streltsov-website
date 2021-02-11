@@ -28,15 +28,22 @@ const DesktopNavPanel = () => {
             <div className="small-traingle"></div>
           </li>
           <li className="d-link">
-            <p>Gallery</p>
+            <Link to={`/gallery`} className="d-link-to">
+              Gallery
+            </Link>
+
             <div className="small-traingle"></div>
           </li>
           <li className="d-link">
-            <p>About</p>
+            <Link to={`/about`} className="d-link-to">
+              About
+            </Link>
             <div className="small-traingle"></div>
           </li>
           <li className="d-link">
-            <p>Contact</p>
+            <Link to={`/contact`} className="d-link-to">
+              Contact
+            </Link>
             <div className="small-traingle"></div>
           </li>
         </ul>
