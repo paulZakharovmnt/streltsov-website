@@ -36,3 +36,30 @@
 .contact-image > img {
   width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+  .contact-page {
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    padding-top: 160px;
+  }
+  .contacts-container {
+    padding: 0;
+    flex-direction: column-reverse;
+  }
+
+  .contact-image {
+    width: 100%;
+    margin: 0;
+  }
+
+  .contacts-info {
+    width: 100%;
+  }
+
+  .contacts-info > h1 {
+    font-size: 50px;
+    font-weight: 100;
+  }
+}
