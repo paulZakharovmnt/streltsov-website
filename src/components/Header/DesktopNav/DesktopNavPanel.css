@@ -200,18 +200,24 @@
 
 .pmd-enter {
   opacity: 0;
-  transition: all 0.5s ease-in;
+  transition: all 0.3s ease-in;
+  height: 0;
+  /* transform: translateY(-200px); */
 }
 
 .pmd-enter-active {
   opacity: 1;
+  height: 170px;
+  /* transform: translateY(0); */
 }
 
 .pmd-exit {
   opacity: 1;
-  transition: all 0.5s ease-in;
+  height: 170px;
+  transition: all 0.3s ease-in;
 }
 
 .pmd-exit-active {
   opacity: 0;
+  height: 0;
 }
