@@ -219,7 +219,7 @@
   }
 
   .featured-product {
-    /* background-color: honeydew; */
+    /* background-color: tomato; */
     width: 100%;
     height: 60%;
   }
@@ -235,11 +235,16 @@
     padding: 0;
     padding-left: 30px;
     width: 80%;
-    height: 70%;
+    height: 80%;
     margin: 0 auto;
     justify-content: flex-start;
     /* padding-top: ; */
     /* display: none; */
+  }
+
+  .featured-product-view-btn {
+    margin-top: 10px;
+    padding-left: 52.5px;
   }
 
   .featured-product-info > h1 {

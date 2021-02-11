@@ -1,0 +1,38 @@
+.contact-page {
+  padding-top: 240px;
+  height: 600px;
+  width: 72%;
+  margin: 0 auto;
+  /* background-color: tomato; */
+  margin-bottom: 30px;
+  color: white;
+}
+
+.contacts-container {
+  /* background-color: blueviolet; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 140px;
+}
+
+.contacts-info {
+  /* background-color: brown; */
+  width: 45%;
+  text-align: left;
+}
+
+.contacts-info > h1 {
+  font-size: 100px;
+  font-weight: 100;
+}
+
+.contact-image {
+  width: 400px;
+  margin-right: 100px;
+}
+
+.contact-image > img {
+  width: 100%;
+}
