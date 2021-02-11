@@ -16,7 +16,7 @@ const DesktopNavPanel = () => {
   return (
     <div className="d-nav">
       <div className="d-nav-logo">
-        <Link to={`/`} className="logo"></Link>
+        <Link to={`/streltsov-website/`} className="logo"></Link>
       </div>
       <div className="d-nav-control">
         <ul className="d-links-list">
@@ -28,20 +28,20 @@ const DesktopNavPanel = () => {
             <div className="small-traingle"></div>
           </li>
           <li className="d-link">
-            <Link to={`/gallery`} className="d-link-to">
+            <Link to={`/streltsov-website/gallery`} className="d-link-to">
               Gallery
             </Link>
 
             <div className="small-traingle"></div>
           </li>
           <li className="d-link">
-            <Link to={`/about`} className="d-link-to">
+            <Link to={`/streltsov-website/about`} className="d-link-to">
               About
             </Link>
             <div className="small-traingle"></div>
           </li>
           <li className="d-link">
-            <Link to={`/contact`} className="d-link-to">
+            <Link to={`/streltsov-website/contact`} className="d-link-to">
               Contact
             </Link>
             <div className="small-traingle"></div>
@@ -66,28 +66,46 @@ const DesktopNavPanel = () => {
           <div className="d-product-container">
             <ul className="d-product-subcategory">
               <div className="d-subcategory-name">Pens</div>
-              <Link to={`/products/Pen`} className="d-sublink">
+              <Link
+                to={`/streltsov-website/products/Pen`}
+                className="d-sublink"
+              >
                 Pen
               </Link>
-              <Link to={`/products/Pencil`} className="d-sublink">
+              <Link
+                to={`/streltsov-website/products/Pencil`}
+                className="d-sublink"
+              >
                 Pencil
               </Link>
             </ul>
             <ul className="d-product-subcategory">
               <div className="d-subcategory-name">Jewelry</div>
-              <Link to={`/products/Pendants`} className="d-sublink">
+              <Link
+                to={`/streltsov-website/products/Pendants`}
+                className="d-sublink"
+              >
                 Pendants
               </Link>
-              <Link to={`/products/Bracelets`} className="d-sublink">
+              <Link
+                to={`/streltsov-website/products/Bracelets`}
+                className="d-sublink"
+              >
                 Bracelets
               </Link>
             </ul>
             <ul className="d-product-subcategory">
               <div className="d-subcategory-name">Accessory</div>
-              <Link to={`/products/Keychains`} className="d-sublink">
+              <Link
+                to={`/streltsov-website/products/Keychains`}
+                className="d-sublink"
+              >
                 Keychains
               </Link>
-              <Link to={`/products/Beadsch`} className="d-sublink">
+              <Link
+                to={`/streltsov-website/products/Beadsch`}
+                className="d-sublink"
+              >
                 Beads
               </Link>
             </ul>

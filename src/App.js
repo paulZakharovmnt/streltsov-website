@@ -43,15 +43,19 @@ function App() {
         </CSSTransition>
 
         <Switch>
-          <Route path="/products" component={Products} exact />
           <Route
-            path="/products/:childLink"
+            path="/streltsov-website/products"
+            component={Products}
+            exact
+          />
+          <Route
+            path="/streltsov-website/products/:childLink"
             component={ProductsPageByType}
             exact
           />
-          <Route path="/contact" component={Contact} exact />
-          <Route path="/" component={Home} exact />
-          <Route path="/about" component={About} />
+          <Route path="/streltsov-website/contact" component={Contact} exact />
+          <Route path="/streltsov-website/" component={Home} exact />
+          <Route path="/streltsov-website/about" component={About} />
 
           {/* 
           <Route path="/cart" component={Cart} />
@@ -61,7 +65,7 @@ function App() {
             component={ProductInfoPage}
           /> */}
           <Route
-            path="/products/:childLink/:productId/"
+            path="/streltsov-website/products/:childLink/:productId/"
             component={ProductInfoPage}
           />
         </Switch>

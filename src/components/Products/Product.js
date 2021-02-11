@@ -9,7 +9,7 @@ const Product = ({ listImg, product, productsById }) => {
   return (
     <Link
       className="productByType-list-product-container"
-      to={`/products/${childLink}/${product}`}
+      to={`/streltsov-website/products/${childLink}/${product}`}
     >
       <div className="productByType-photo">
         <img src={productInfo.images[0]} alt="" />

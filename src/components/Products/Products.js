@@ -31,7 +31,7 @@ const Products = () => {
           childLinks[parentLink].sublinks.map((sublink) => {
             return (
               <Link
-                to={`/products/${childLinks[parentLink].linksData[sublink].name}`}
+                to={`/streltsov-website/products/${childLinks[parentLink].linksData[sublink].name}`}
                 className="product-container"
               >
                 <div className="product-img-box">

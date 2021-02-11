@@ -30,7 +30,7 @@ const MobileNavPanel = () => {
         classNames="m-nav-animation"
       >
         <div className="m-nav-container">
-          <Link to={`/`} className="m-logo"></Link>
+          <Link to={`/streltsov-website/`} className="m-logo"></Link>
           <div className="m-menu-control">
             <CartIcon />
             <Burger

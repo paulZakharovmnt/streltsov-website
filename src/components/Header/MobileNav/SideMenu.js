@@ -48,14 +48,14 @@ const SideMenu = ({ setShowSideMenu }) => {
                     <div className="m-sublinks">
                       <Link
                         onClick={() => setShowSideMenu(false)}
-                        to={`/products/Pen`}
+                        to={`/streltsov-website/products/Pen`}
                         className="m-link"
                       >
                         Pen
                       </Link>
                       <Link
                         onClick={() => setShowSideMenu(false)}
-                        to={`/products/Pencil`}
+                        to={`/streltsov-website/products/Pencil`}
                         className="m-link"
                       >
                         Pencil
@@ -70,14 +70,14 @@ const SideMenu = ({ setShowSideMenu }) => {
                     <div className="m-sublinks">
                       <Link
                         onClick={() => setShowSideMenu(false)}
-                        to={`/products/Pendants`}
+                        to={`/streltsov-website/products/Pendants`}
                         className="m-link"
                       >
                         Pendants
                       </Link>
                       <Link
                         onClick={() => setShowSideMenu(false)}
-                        to={`/products/Bracelets`}
+                        to={`/streltsov-website/products/Bracelets`}
                         className="m-link"
                       >
                         Bracelets
@@ -92,14 +92,14 @@ const SideMenu = ({ setShowSideMenu }) => {
                     <div className="m-sublinks">
                       <Link
                         onClick={() => setShowSideMenu(false)}
-                        to={`/products/Keychain`}
+                        to={`/streltsov-website/products/Keychain`}
                         className="m-link"
                       >
                         Keychain
                       </Link>
                       <Link
                         onClick={() => setShowSideMenu(false)}
-                        to={`/products/Beads`}
+                        to={`/streltsov-website/products/Beads`}
                         className="m-link"
                       >
                         Beads
@@ -114,7 +114,7 @@ const SideMenu = ({ setShowSideMenu }) => {
             <div className="main-link-btn">
               <Link
                 onClick={() => setShowSideMenu(false)}
-                to={`/Gallery`}
+                to={`/streltsov-website/Gallery`}
                 className="m-parent-link"
               >
                 Gallery
@@ -126,7 +126,7 @@ const SideMenu = ({ setShowSideMenu }) => {
             <div className="main-link-btn">
               <Link
                 onClick={() => setShowSideMenu(false)}
-                to={`/About`}
+                to={`/streltsov-website/About`}
                 className="m-parent-link"
               >
                 About
@@ -139,7 +139,7 @@ const SideMenu = ({ setShowSideMenu }) => {
               {" "}
               <Link
                 // onClick={() => setShowSideMenu(false)}
-                to={`/Contact`}
+                to={`/streltsov-website/Contact`}
                 className="m-parent-link"
               >
                 Contact

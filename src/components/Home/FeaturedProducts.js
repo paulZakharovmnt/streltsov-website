@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./FeaturedProducts.css";
-import { CSSTransition, SwitchTransition } from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
 import LeftArrow from "../AdditionalComponents/ImageNavArrows/LeftArrow";
 import RightArrow from "../AdditionalComponents/ImageNavArrows/RightArrow";
-// import classNames from "classnames";
 import { useSelector } from "react-redux";
 
 const FeaturedProducts = () => {
@@ -38,10 +37,6 @@ const FeaturedProducts = () => {
     setShowingProductId(showingProductId - 1);
   };
 
-  // const dotClasses = classNames("featured-dot", {
-  //   selectedDot: showingProductId === 0,
-  // });
-
   return (
     <div className="featured">
       {onlyFeaturedProducts.length > 0 && (
@@ -56,7 +51,7 @@ const FeaturedProducts = () => {
               {/* <p> */}
               <Link
                 className="product-view-btn"
-                to={`/products/${currentProduct.type}/${currentProduct.name}`}
+                to={`/streltsov-website/products/${currentProduct.type}/${currentProduct.name}`}
               >
                 View product
               </Link>
@@ -86,8 +81,6 @@ const FeaturedProducts = () => {
                   addEndListener={(node, done) =>
                     node.addEventListener("transitionend", done, false)
                   }
-                  // classNames="fade"
-                  // in={currentProduct}
                   timeout={1000}
                   mountOnEnter
                   unmountOnExit
