@@ -13,6 +13,7 @@ import { productsByIdTEST } from "./core/TestProducts";
 import CartPreview from "./components/Cart/CartPreview";
 import Home from "./components/Home/Home";
 import BreadCrumbs from "./components/AdditionalComponents/BreadCrumbs";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   const showCartPreview = useSelector((state) => state.cartPreviewReducer);
@@ -47,6 +48,7 @@ function App() {
             component={ProductsPageByType}
             exact
           />
+          <Route path="/contact" component={Contact} exact />
           <Route path="/" component={Home} exact />
 
           {/* <Route path="/about" component={About} />
