@@ -13,7 +13,13 @@ const BreadCrumbs = () => {
             to={`${breadcrumbs[breadcrumbs.length - 2].key}`}
             className="back-crumb"
           >
-            Back
+            <div className="round">
+              <div id="cta">
+                <span className="arrow primera next "></span>
+                <span className="arrow segunda next "></span>
+              </div>
+            </div>
+            <p>Back</p>
           </Link>
           {breadcrumbs.slice(0, breadcrumbs.length - 1).map((crumb) => (
             <div key={crumb.key} className="crumb-box">
