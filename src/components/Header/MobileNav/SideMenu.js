@@ -114,7 +114,7 @@ const SideMenu = ({ setShowSideMenu }) => {
             <div className="main-link-btn">
               <Link
                 onClick={() => setShowSideMenu(false)}
-                to={`/products/Gallery`}
+                to={`/Gallery`}
                 className="m-parent-link"
               >
                 Gallery
@@ -126,7 +126,7 @@ const SideMenu = ({ setShowSideMenu }) => {
             <div className="main-link-btn">
               <Link
                 onClick={() => setShowSideMenu(false)}
-                to={`/products/About`}
+                to={`/About`}
                 className="m-parent-link"
               >
                 About
@@ -139,7 +139,7 @@ const SideMenu = ({ setShowSideMenu }) => {
               {" "}
               <Link
                 // onClick={() => setShowSideMenu(false)}
-                to={`/products/Contact`}
+                to={`/Contact`}
                 className="m-parent-link"
               >
                 Contact
