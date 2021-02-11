@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/streltsov-website/static/css/main.710514d9.chunk.css",
+    "main.js": "/streltsov-website/static/js/main.f5dfbd8e.chunk.js",
+    "main.js.map": "/streltsov-website/static/js/main.f5dfbd8e.chunk.js.map",
+    "runtime-main.js": "/streltsov-website/static/js/runtime-main.5b8ed2ed.js",
+    "runtime-main.js.map": "/streltsov-website/static/js/runtime-main.5b8ed2ed.js.map",
+    "static/js/2.e1e2ecc4.chunk.js": "/streltsov-website/static/js/2.e1e2ecc4.chunk.js",
+    "static/js/2.e1e2ecc4.chunk.js.map": "/streltsov-website/static/js/2.e1e2ecc4.chunk.js.map",
+    "index.html": "/streltsov-website/index.html",
+    "static/css/main.710514d9.chunk.css.map": "/streltsov-website/static/css/main.710514d9.chunk.css.map",
+    "static/js/2.e1e2ecc4.chunk.js.LICENSE.txt": "/streltsov-website/static/js/2.e1e2ecc4.chunk.js.LICENSE.txt",
+    "static/media/333.972ff40a.jpg": "/streltsov-website/static/media/333.972ff40a.jpg",
+    "static/media/DSC01185.f5c4b733.jpg": "/streltsov-website/static/media/DSC01185.f5c4b733.jpg",
+    "static/media/DSC01463.517aaba9.jpg": "/streltsov-website/static/media/DSC01463.517aaba9.jpg",
+    "static/media/DSC03510.cbeff86f.jpg": "/streltsov-website/static/media/DSC03510.cbeff86f.jpg",
+    "static/media/DSC09187.68bf0731.jpg": "/streltsov-website/static/media/DSC09187.68bf0731.jpg",
+    "static/media/DSC09312.9722b66d.jpg": "/streltsov-website/static/media/DSC09312.9722b66d.jpg",
+    "static/media/about.203a8e11.jpg": "/streltsov-website/static/media/about.203a8e11.jpg",
+    "static/media/about1.5cc478f4.jpg": "/streltsov-website/static/media/about1.5cc478f4.jpg",
+    "static/media/about2.3e05f9f1.jpg": "/streltsov-website/static/media/about2.3e05f9f1.jpg",
+    "static/media/blue.6d052ace.jpg": "/streltsov-website/static/media/blue.6d052ace.jpg",
+    "static/media/contact.f031f2bd.jpg": "/streltsov-website/static/media/contact.f031f2bd.jpg",
+    "static/media/pen.a0257f1c.jpg": "/streltsov-website/static/media/pen.a0257f1c.jpg",
+    "static/media/pencil.59ffbea7.jpg": "/streltsov-website/static/media/pencil.59ffbea7.jpg",
+    "static/media/products1.d7238860.jpg": "/streltsov-website/static/media/products1.d7238860.jpg",
+    "static/media/red.4532648d.jpg": "/streltsov-website/static/media/red.4532648d.jpg",
+    "static/media/skull.30a945b8.jpg": "/streltsov-website/static/media/skull.30a945b8.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5b8ed2ed.js",
+    "static/js/2.e1e2ecc4.chunk.js",
+    "static/css/main.710514d9.chunk.css",
+    "static/js/main.f5dfbd8e.chunk.js"
+  ]
+}
