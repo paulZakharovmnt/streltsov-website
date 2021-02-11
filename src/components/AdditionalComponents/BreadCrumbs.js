@@ -7,10 +7,10 @@ const BreadCrumbs = () => {
   const breadcrumbs = useBreadcrumbs();
   return (
     <div className="breadCrumbs-container">
-      {breadcrumbs.length <= 1 ? null : (
+      {breadcrumbs.length <= 2 ? null : (
         <div className="breadCrumbs">
           <Link
-            to={`${breadcrumbs[breadcrumbs.length - 2].key}`}
+            to={`${breadcrumbs[breadcrumbs.length - 3].key}`}
             className="back-crumb"
           >
             <div className="round">
@@ -21,7 +21,7 @@ const BreadCrumbs = () => {
             </div>
             <p>Back</p>
           </Link>
-          {breadcrumbs.slice(0, breadcrumbs.length - 1).map((crumb) => (
+          {breadcrumbs.slice(1, breadcrumbs.length - 1).map((crumb) => (
             <div key={crumb.key} className="crumb-box">
               {" "}
               <Link to={`${crumb.key}`} className="crumb">
