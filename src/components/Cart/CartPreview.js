@@ -57,44 +57,49 @@ const CartPreview = () => {
               Close
             </div>
           </div>
-          <div className="cart-preview-products-list">
-            {productsAllIdsInCart.map((product) => (
-              <ProductInCart
-                key={product}
-                product={product}
-                productsInCart={productsInCart}
-              />
-            ))}
-          </div>
-          <div className="cart-preview-recent-actions"></div>
-          <div className="cart-preview-total-container">
-            <div className="cart-preview-subtotal">
-              <h4>Subtotal</h4>
-              <p>{subtotal} USD</p>
+          {productsAllIdsInCart.length > 0 ? (
+            <div className="cart-preview">
+              <div className="cart-preview-products-list">
+                {productsAllIdsInCart.map((product) => (
+                  <ProductInCart
+                    key={product}
+                    product={product}
+                    productsInCart={productsInCart}
+                  />
+                ))}
+              </div>
+              <div className="cart-preview-total-container">
+                <div className="cart-preview-subtotal">
+                  <h4>Subtotal</h4>
+                  <p>{subtotal} USD</p>
+                </div>
+                <div className="cart-preview-subtotal">
+                  <h4>Delivery</h4>
+                  <p>{delivery} USD</p>
+                </div>
+                <span></span>
+                <div className="cart-preview-total">
+                  <h4>Total</h4>
+                  <p>{subtotal + delivery} USD</p>
+                </div>
+              </div>
+              <div className="cart-preview-buttons-container">
+                <div className="proceed-btn">
+                  <p>Proceed to checkout</p>
+                  <div className="checkout-traingle"></div>
+                </div>
+                <div
+                  className="cont-shopping-btn"
+                  onClick={() => dispatch(handleShowCartPreview(false))}
+                >
+                  <p>Continue shopping</p>
+                  <div className="continue-traingle"></div>
+                </div>
+              </div>
             </div>
-            <div className="cart-preview-subtotal">
-              <h4>Delivery</h4>
-              <p>{delivery} USD</p>
-            </div>
-            <span></span>
-            <div className="cart-preview-total">
-              <h4>Total</h4>
-              <p>{subtotal + delivery} USD</p>
-            </div>
-          </div>
-          <div className="cart-preview-buttons-container">
-            <div className="proceed-btn">
-              <p>Proceed to checkout</p>
-              <div className="checkout-traingle"></div>
-            </div>
-            <div
-              className="cont-shopping-btn"
-              onClick={() => dispatch(handleShowCartPreview(false))}
-            >
-              <p>Continue shopping</p>
-              <div className="continue-traingle"></div>
-            </div>
-          </div>
+          ) : (
+            <div className="cart-empty"> Your cart is empty</div>
+          )}
         </div>
         {showSpinner && <LoadingSpinner />}
       </div>
