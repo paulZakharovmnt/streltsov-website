@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/streltsov-website/static/css/main.710514d9.chunk.css",
-    "main.js": "/streltsov-website/static/js/main.f5dfbd8e.chunk.js",
-    "main.js.map": "/streltsov-website/static/js/main.f5dfbd8e.chunk.js.map",
+    "main.js": "/streltsov-website/static/js/main.eff3104e.chunk.js",
+    "main.js.map": "/streltsov-website/static/js/main.eff3104e.chunk.js.map",
     "runtime-main.js": "/streltsov-website/static/js/runtime-main.5b8ed2ed.js",
     "runtime-main.js.map": "/streltsov-website/static/js/runtime-main.5b8ed2ed.js.map",
     "static/js/2.e1e2ecc4.chunk.js": "/streltsov-website/static/js/2.e1e2ecc4.chunk.js",
@@ -31,6 +31,6 @@
     "static/js/runtime-main.5b8ed2ed.js",
     "static/js/2.e1e2ecc4.chunk.js",
     "static/css/main.710514d9.chunk.css",
-    "static/js/main.f5dfbd8e.chunk.js"
+    "static/js/main.eff3104e.chunk.js"
   ]
 }
