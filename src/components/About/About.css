@@ -158,3 +158,75 @@
 .about-left-image > img {
   width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+  .about-page {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 160px;
+  }
+  .about-header {
+    /* background-color: burlywood; */
+    flex-direction: column-reverse;
+    /* width: 100%; */
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .about-image {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .about {
+    width: 100%;
+  }
+
+  .about > h1 {
+    font-size: 50px;
+  }
+  .warranty {
+    padding: 0;
+  }
+  .about-right {
+    padding: 0;
+    flex-direction: column-reverse;
+  }
+
+  .about-right > p {
+    width: 100%;
+  }
+
+  .about-right-image {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .about-right-image::after {
+    display: none;
+  }
+
+  .deliver {
+    padding: 0;
+  }
+
+  .about-left {
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .about-left > p {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .about-left-image {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .about-left-image::after {
+    display: none;
+  }
+}
