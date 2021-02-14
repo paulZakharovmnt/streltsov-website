@@ -123,9 +123,6 @@ const ProductInfoPage = () => {
           setShowProductPhotosModal={setShowProductPhotosModal}
         />
       )}
-      <div className="popup-message-box">
-        {/* {showPopUpMessage && <PopupMessage />} */}
-      </div>
     </div>
   );
 };
