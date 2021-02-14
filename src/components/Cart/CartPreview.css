@@ -187,7 +187,8 @@
   cursor: pointer;
 }
 
-.proceed-btn > p {
+.proceed-btn > p,
+.proceed-btn-link {
   /* background-color: black; */
   /* margin-left: 61px; */
   padding-left: 61px;
@@ -199,6 +200,7 @@
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease-in-out;
+  text-decoration: none;
 }
 .checkout-traingle {
   border-color: white transparent transparent transparent;
@@ -209,7 +211,8 @@
   transition: all 0.2s ease-in-out;
 }
 
-.proceed-btn:hover > p {
+.proceed-btn:hover > p,
+.proceed-btn-link:hover {
   background-color: black;
   color: white;
 }
@@ -277,5 +280,9 @@
 
   .cart-box {
     padding: 10px 30px;
+  }
+
+  .cart-preview-buttons-container {
+    padding-bottom: 40px;
   }
 }
