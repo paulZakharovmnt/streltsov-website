@@ -22,7 +22,9 @@ const DesktopNavPanel = () => {
         <ul className="d-links-list">
           <li
             className={productButtonClasses}
-            onClick={() => setShowProductsMenu(!showProductsMenu)}
+            // onClick={() => setShowProductsMenu(!showProductsMenu)}
+            onMouseEnter={() => setShowProductsMenu(true)}
+            onMouseLeave={() => setShowProductsMenu(false)}
           >
             <p>Products</p>
             <div className="small-traingle"></div>
@@ -62,19 +64,25 @@ const DesktopNavPanel = () => {
         unmountOnExit
         classNames="pmd"
       >
-        <div className="d-product-menu">
+        <div
+          className="d-product-menu"
+          onMouseEnter={() => setShowProductsMenu(true)}
+          onMouseLeave={() => setShowProductsMenu(false)}
+        >
           <div className="d-product-container">
             <ul className="d-product-subcategory">
               <div className="d-subcategory-name">Pens</div>
               <Link
                 to={`/streltsov-website/products/Pen`}
                 className="d-sublink"
+                onClick={() => setShowProductsMenu(false)}
               >
                 Pen
               </Link>
               <Link
                 to={`/streltsov-website/products/Pencil`}
                 className="d-sublink"
+                onClick={() => setShowProductsMenu(false)}
               >
                 Pencil
               </Link>
@@ -84,12 +92,14 @@ const DesktopNavPanel = () => {
               <Link
                 to={`/streltsov-website/products/Pendants`}
                 className="d-sublink"
+                onClick={() => setShowProductsMenu(false)}
               >
                 Pendants
               </Link>
               <Link
                 to={`/streltsov-website/products/Bracelets`}
                 className="d-sublink"
+                onClick={() => setShowProductsMenu(false)}
               >
                 Bracelets
               </Link>
@@ -99,12 +109,14 @@ const DesktopNavPanel = () => {
               <Link
                 to={`/streltsov-website/products/Keychains`}
                 className="d-sublink"
+                onClick={() => setShowProductsMenu(false)}
               >
                 Keychains
               </Link>
               <Link
                 to={`/streltsov-website/products/Beadsch`}
                 className="d-sublink"
+                onClick={() => setShowProductsMenu(false)}
               >
                 Beads
               </Link>
