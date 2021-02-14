@@ -7,6 +7,7 @@ import countProductsSubtotal from "../../core/countProductsSubtotal";
 import classNames from "classnames";
 import ProductInCart from "./ProductInCart";
 import LoadingSpinner from "../AdditionalComponents/LoadingSpinner";
+import { Link } from "react-router-dom";
 
 const CartPreview = () => {
   const [showSpinner, setShowSpinner] = useState(false);
@@ -85,7 +86,13 @@ const CartPreview = () => {
               </div>
               <div className="cart-preview-buttons-container">
                 <div className="proceed-btn">
-                  <p>Proceed to checkout</p>
+                  <Link
+                    to={`/streltsov-website/cart`}
+                    className="proceed-btn-link"
+                    onClick={() => dispatch(handleShowCartPreview(false))}
+                  >
+                    Proceed to checkout
+                  </Link>
                   <div className="checkout-traingle"></div>
                 </div>
                 <div
