@@ -15,6 +15,8 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import BreadCrumbs from "./components/AdditionalComponents/BreadCrumbs";
 import Contact from "./components/Contact/Contact";
+import CartPage from "./components/Cart/CartPage";
+import ScrollToTop from "react-router-scroll-top";
 
 function App() {
   const showCartPreview = useSelector((state) => state.cartPreviewReducer);
@@ -26,53 +28,52 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
-        <header>
-          <Nav />
-          <BreadCrumbs />
-        </header>
+      <ScrollToTop>
+        <div className="App">
+          <header>
+            <Nav />
+            <BreadCrumbs />
+          </header>
 
-        <CSSTransition
-          in={showCartPreview}
-          timeout={1000}
-          mountOnEnter
-          unmountOnExit
-          classNames="cp"
-        >
-          <CartPreview />
-        </CSSTransition>
+          <Switch>
+            <Route path="/streltsov-website/" component={Home} exact />
+            <Route path="/streltsov-website/about" component={About} />
+            <Route
+              path="/streltsov-website/contact"
+              component={Contact}
+              exact
+            />
+            <Route path="/streltsov-website/cart" component={CartPage} />
+            <Route
+              path="/streltsov-website/products"
+              component={Products}
+              exact
+            />
+            <Route
+              path="/streltsov-website/products/:childLink"
+              component={ProductsPageByType}
+              exact
+            />
+            <Route
+              path="/streltsov-website/products/:childLink/:productId/"
+              component={ProductInfoPage}
+            />
+          </Switch>
 
-        <Switch>
-          <Route
-            path="/streltsov-website/products"
-            component={Products}
-            exact
-          />
-          <Route
-            path="/streltsov-website/products/:childLink"
-            component={ProductsPageByType}
-            exact
-          />
-          <Route path="/streltsov-website/contact" component={Contact} exact />
-          <Route path="/streltsov-website/" component={Home} exact />
-          <Route path="/streltsov-website/about" component={About} />
-
-          {/* 
-          <Route path="/cart" component={Cart} />
-          <Route path="/products/:childLink" component={Products} exact />
-          <Route
-            path="/products/:childLink/:productId"
-            component={ProductInfoPage}
-          /> */}
-          <Route
-            path="/streltsov-website/products/:childLink/:productId/"
-            component={ProductInfoPage}
-          />
-        </Switch>
-        <footer>
-          <Footer />
-        </footer>
-      </div>
+          <CSSTransition
+            in={showCartPreview}
+            timeout={1000}
+            mountOnEnter
+            unmountOnExit
+            classNames="cp"
+          >
+            <CartPreview />
+          </CSSTransition>
+          <footer>
+            <Footer />
+          </footer>
+        </div>
+      </ScrollToTop>
     </Router>
   );
 }
