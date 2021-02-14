@@ -1,0 +1,83 @@
+.billing-details {
+  /* background-color: brown; */
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding-top: 40px;
+}
+
+.billing-details > h2 {
+  font-weight: 300;
+  font-size: 30px;
+  margin: 0;
+  /* background-color: hotpink; */
+}
+
+.billing-details > input {
+  color: white;
+  border: 1px solid rgb(172, 172, 172);
+  outline: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  width: 80%;
+  font-size: 14px;
+  padding: 10px;
+  margin-top: 20px;
+  transition: all 0.2s ease-in;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--black) inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+}
+
+::placeholder {
+  color: rgb(150, 150, 150);
+  opacity: 1; /* Firefox */
+}
+
+.billing-details > input:focus {
+  /* background-color: cadetblue; */
+  box-shadow: 0px 0px 6px 0.5px white;
+}
+
+.billing-details > textarea {
+  width: 80%;
+  padding: 10px;
+  outline: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid rgb(172, 172, 172);
+  margin-top: 20px;
+  color: white;
+}
+
+/* .cart-left-container > input:valid {
+    border-bottom: 2px solid white;
+  } */
+
+@media screen and (max-width: 768px) {
+  .billing-details {
+    width: 100%;
+  }
+
+  .billing-details > input,
+  .billing-details > textarea {
+    width: 90%;
+  }
+}
