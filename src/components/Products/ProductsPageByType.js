@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 import "./ProductsPageByType.css";
 import FilterBar from "./Filters/FilterBar";
 import headerImg from "../../img/DSC03510.jpg";
-import listImg from "../../img/Products/DSC09187.jpg";
 import Product from "./Product";
+import { childLinks } from "../../core/NavigationLinks";
 import Fade from "react-reveal/Fade";
 
 const ProductsPageByType = () => {
@@ -13,6 +13,9 @@ const ProductsPageByType = () => {
   const filters = useSelector((state) => state.filtersReducer);
   const productsById = useSelector((state) => state.productsByIdReducer);
   const productsAllIds = useSelector((state) => state.productsAllIdsReducer);
+
+  console.log(childLink);
+  const productTypeImage = childLinks;
 
   return (
     <div className="productByType-page">
@@ -47,7 +50,6 @@ const ProductsPageByType = () => {
             <Product
               productsById={productsById}
               product={product}
-              listImg={listImg}
               key={product}
             />
           ))}
