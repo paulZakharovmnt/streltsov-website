@@ -20,15 +20,16 @@ const DesktopNavPanel = () => {
       </div>
       <div className="d-nav-control">
         <ul className="d-links-list">
-          <li
+          <Link
+            to={`/streltsov-website/products`}
             className={productButtonClasses}
-            // onClick={() => setShowProductsMenu(!showProductsMenu)}
             onMouseEnter={() => setShowProductsMenu(true)}
             onMouseLeave={() => setShowProductsMenu(false)}
+            onClick={() => setShowProductsMenu(false)}
           >
             <p>Products</p>
             <div className="small-traingle"></div>
-          </li>
+          </Link>
           <li className="d-link">
             <Link to={`/streltsov-website/gallery`} className="d-link-to">
               Gallery
@@ -59,7 +60,7 @@ const DesktopNavPanel = () => {
       <div className="nav-traingle"></div>
       <CSSTransition
         in={showProductsMenu}
-        timeout={500}
+        timeout={300}
         mountOnEnter
         unmountOnExit
         classNames="pmd"
