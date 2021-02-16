@@ -38,22 +38,25 @@ export const decrementProductQuontity = (product) => {
   };
 };
 
-export const changePriceSort = (filterProp) => {
+export const changeFilter = (filterToChange, filterValue) => {
   return {
-    type: "CHANGE_PRICE_FILTER",
-    payload: filterProp,
+    type: "CHANGE_FILTER",
+    payload: {
+      filterToChange,
+      filterValue,
+    },
   };
 };
 
-export const changeCollectionFilter = (filterProp) => {
+export const clearAllFilters = () => {
   return {
-    type: "CHANGE_COLLECTION_FILTER",
-    payload: filterProp,
+    type: "CLEAR_ALL_FILTERS",
   };
 };
-export const changePenTypeFilter = (filterProp) => {
+
+export const changePriceSort = (filterProp) => {
   return {
-    type: "CHANGE_PEN_TYPE_FILTER",
+    type: "CHANGE_PRICE_FILTER",
     payload: filterProp,
   };
 };
