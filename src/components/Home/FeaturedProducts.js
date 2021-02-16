@@ -5,6 +5,7 @@ import { CSSTransition } from "react-transition-group";
 import LeftArrow from "../AdditionalComponents/ImageNavArrows/LeftArrow";
 import RightArrow from "../AdditionalComponents/ImageNavArrows/RightArrow";
 import { useSelector } from "react-redux";
+import Fade from "react-reveal/Fade";
 
 const FeaturedProducts = () => {
   const [showingProductId, setShowingProductId] = useState(0);
@@ -75,7 +76,7 @@ const FeaturedProducts = () => {
                 ))}
               </div>
               <div className="featured-image1-wrap">
-                <CSSTransition
+                {/* <CSSTransition
                   key={currentProduct}
                   in={currentProduct}
                   addEndListener={(node, done) =>
@@ -85,9 +86,12 @@ const FeaturedProducts = () => {
                   mountOnEnter
                   unmountOnExit
                   classNames="fi1"
-                >
-                  <img src={currentProduct.images[0]} alt="" />
-                </CSSTransition>
+                > */}
+                {/* <Fade mountOnEnter> */}
+                <img src={currentProduct.images[0]} alt="" />
+                {/* </Fade> */}
+
+                {/* </CSSTransition> */}
               </div>
             </div>
             <div className="featured-image2-control">
