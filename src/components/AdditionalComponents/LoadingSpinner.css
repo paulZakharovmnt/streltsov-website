@@ -5,6 +5,7 @@
   bottom: 0;
   right: 0;
   left: 0;
+  /* height: 100vh; */
   z-index: 9999;
 }
 
@@ -31,5 +32,15 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .spinner {
+    position: fixed;
+  }
+
+  .lds-dual-ring {
+    margin-top: 350px;
   }
 }

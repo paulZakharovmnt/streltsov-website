@@ -12,7 +12,8 @@
 .product-info-container {
   /* background-color: indigo; */
   width: 50%;
-  height: 500px;
+  min-height: 600px;
+  /* height: 500px; */
   color: white;
 }
 

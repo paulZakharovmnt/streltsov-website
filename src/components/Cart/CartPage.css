@@ -11,9 +11,10 @@
 .cart-right {
   /* background-color: burlywood; */
   width: 50%;
-  min-height: 600px;
+  min-height: 500px;
   padding-top: 40px;
   padding-bottom: 80px;
+  /* position: relative; */
 }
 
 .cart-product {
