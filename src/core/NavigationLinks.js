@@ -1,5 +1,9 @@
 import pen from "../img/headers/pen.jpg";
 import pencil from "../img/headers/pencil.jpg";
+import pendants from "../img/headers/pendants.jpg";
+import bracelets from "../img/headers/bracelets.jpg";
+import keychains from "../img/headers/keychains.jpg";
+import beads from "../img/headers/beads.jpg";
 
 export const linksWithOptions = ["Pens", "Jewelry", "Accessory"];
 export const directLinks = ["Gallery", "About"];
@@ -22,11 +26,11 @@ export const childLinks = {
     linksData: {
       Pendants: {
         name: "Pendants",
-        image: pen,
+        image: pendants,
       },
       Bracelets: {
         name: "Bracelets",
-        image: pencil,
+        image: bracelets,
       },
     },
   },
@@ -35,11 +39,11 @@ export const childLinks = {
     linksData: {
       Keychains: {
         name: "Keychains",
-        image: pen,
+        image: keychains,
       },
       Beads: {
         name: "Beads",
-        image: pencil,
+        image: beads,
       },
     },
   },
