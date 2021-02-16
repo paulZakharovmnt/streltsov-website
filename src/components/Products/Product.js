@@ -2,7 +2,7 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 
-const Product = ({ listImg, product, productsById }) => {
+const Product = ({ product, productsById }) => {
   const productInfo = productsById[product];
   const { childLink } = useParams();
   console.log(productInfo);
