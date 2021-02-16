@@ -5,11 +5,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { addProductToCart } from "../redux/actions/actions";
 import classNames from "classnames";
 import ProductImagesModal from "./ProductImagesModal";
-import useBreadcrumbs from "use-react-router-breadcrumbs";
 import "./ProductInfoPage.css";
 // import { useSwipeable } from "react-swipeable";
 import PopupMessage from "./AdditionalComponents/PopupMessage";
-import BreadCrumbs from "./AdditionalComponents/BreadCrumbs";
+import Fade from "react-reveal/Fade";
 // import LoadingSpinner from "./AdditionalComponents/LoadingSpinner";
 
 const ProductInfoPage = () => {
@@ -17,20 +16,15 @@ const ProductInfoPage = () => {
   const [productIsInCart, setProductIsInCart] = useState(false);
   const [showPopUpMessage, setShowPopUpMessage] = useState(false);
   const [showProductPhotosModal, setShowProductPhotosModal] = useState(false);
-
-  const dispatch = useDispatch();
-  const productsInCart = useSelector((state) => state.cartReducer);
   const productsAllIdsInCart = useSelector(
     (state) => state.productsAllIdsInCartReducer
   );
-  const productsById = useSelector((state) => state.productsByIdReducer);
+  const dispatch = useDispatch();
+  // const productsInCart = useSelector((state) => state.cartReducer);
+
+  // const productsById = useSelector((state) => state.productsByIdReducer);
 
   const currentProduct = productsByIdTEST[productId];
-  // console.log(productId);
-  // console.log(childLink);
-
-  const breadcrumbs = useBreadcrumbs();
-  console.log(breadcrumbs);
 
   useEffect(() => {
     if (productsAllIdsInCart.includes(productId)) {
@@ -91,39 +85,41 @@ const ProductInfoPage = () => {
   // };
 
   return (
-    <div className="product-page">
-      <div className="product-info-container">
-        <div className="product-info">
-          <p>{currentProduct.collection}</p>
-          <h1>{currentProduct.name}</h1>
-          <p>{currentProduct.description}</p>
-          <p>{currentProduct.material}</p>
-          <h2>{currentProduct.price} USD</h2>
-          <div
-            className={addToCartBtnClasses}
-            onClick={handleAddProductToCartClick}
-          >
-            {!productIsInCart ? <p>Add to Cart</p> : <p>In Cart</p>}
+    <Fade>
+      <div className="product-page">
+        <div className="product-info-container">
+          <div className="product-info">
+            <p>{currentProduct.collection}</p>
+            <h1>{currentProduct.name}</h1>
+            <p>{currentProduct.description}</p>
+            <p>{currentProduct.material}</p>
+            <h2>{currentProduct.price} USD</h2>
+            <div
+              className={addToCartBtnClasses}
+              onClick={handleAddProductToCartClick}
+            >
+              {!productIsInCart ? <p>Add to Cart</p> : <p>In Cart</p>}
 
-            <div className="add-to-cart-traingle"></div>
+              <div className="add-to-cart-traingle"></div>
+            </div>
           </div>
+          {showPopUpMessage && <PopupMessage currentProduct={currentProduct} />}
         </div>
-        {showPopUpMessage && <PopupMessage currentProduct={currentProduct} />}
+        <div className="product-photo-container">
+          <img
+            src={currentProduct.images[0]}
+            alt=""
+            onClick={() => setShowProductPhotosModal(true)}
+          />
+        </div>
+        {showProductPhotosModal && (
+          <ProductImagesModal
+            currentProduct={currentProduct}
+            setShowProductPhotosModal={setShowProductPhotosModal}
+          />
+        )}
       </div>
-      <div className="product-photo-container">
-        <img
-          src={currentProduct.images[0]}
-          alt=""
-          onClick={() => setShowProductPhotosModal(true)}
-        />
-      </div>
-      {showProductPhotosModal && (
-        <ProductImagesModal
-          currentProduct={currentProduct}
-          setShowProductPhotosModal={setShowProductPhotosModal}
-        />
-      )}
-    </div>
+    </Fade>
   );
 };
 
