@@ -3,6 +3,7 @@ import BillingDetails from "./BillingDetails";
 import countProductsSubtotal from "../../core/countProductsSubtotal";
 import { useSelector } from "react-redux";
 import "./CartPage.css";
+import LoadingSpinner from "../AdditionalComponents/LoadingSpinner";
 
 const CartPage = () => {
   const [expressShipping, setExpressShipping] = useState(false);
@@ -67,12 +68,14 @@ const CartPage = () => {
         </div>
         <div className="cart-total">
           <p>Total</p>
-          <p>USD &nbsp;{subtotal + deliveryCost}</p>
+          {/* <p>USD &nbsp;{subtotal + deliveryCost}</p> */}
+          <p>USD &nbsp;2 000.-</p>
         </div>
         <div className="checkout-btn">
           <p>Proceed Checkout</p>
           <div className="checkout-btn-traingle"></div>
         </div>
+        {/* <LoadingSpinner /> */}
       </div>
     </div>
   );
