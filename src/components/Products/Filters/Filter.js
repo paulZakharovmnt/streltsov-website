@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { changeFilter } from "../../../redux/actions/actions";
 
 const Filter = ({ filters, filter }) => {
   const [showFilterProps, setShowFilterProps] = useState(false);
+  const productsById = useSelector((state) => state.productsByIdReducer);
+  const productsAllIds = useSelector((state) => state.productsAllIdsReducer);
+
+  const dispatch = useDispatch();
 
   const filterInfo = filters[filter];
-  console.log(filterInfo);
+  const penIds = productsAllIds.filter(
+    (product) => productsById[product].type === "Pen"
+  );
+
+  useEffect(() => {
+    setShowFilterProps(false);
+  }, [filters]);
+
+  const allFilterProps = penIds.map((pen) => productsById[pen][filter]);
+
   return (
     <div className="filter-type">
       <div className="small-traingle-left"></div>
@@ -12,7 +27,7 @@ const Filter = ({ filters, filter }) => {
         className="filter-props"
         onClick={() => setShowFilterProps(!showFilterProps)}
       >
-        <p>By Pen type:</p>
+        <p>{filters[filter].name}:</p>
         <p>{filterInfo.value === "" ? "All" : filterInfo.value}</p>
       </div>
 
@@ -21,22 +36,21 @@ const Filter = ({ filters, filter }) => {
         <div className="filter-by-props-container">
           <div
             className="filter-by-prop"
-            // onClick={() => dispatch(changePenTypeFilter(""))}
+            onClick={() => dispatch(changeFilter(filter, ""))}
           >
-            All
+            ALL
           </div>
-          <div
-            className="filter-by-prop"
-            // onClick={() => dispatch(changePenTypeFilter("Ballpoint"))}
-          >
-            Ballpoint
-          </div>
-          <div
-            className="filter-by-prop"
-            // onClick={() => dispatch(changePenTypeFilter("Fountain"))}
-          >
-            Fountain
-          </div>
+          {allFilterProps.map((prop) => {
+            return (
+              <div
+                key={prop}
+                className="filter-by-prop"
+                onClick={() => dispatch(changeFilter(filter, prop))}
+              >
+                {prop}
+              </div>
+            );
+          })}
         </div>
       )}
     </div>
