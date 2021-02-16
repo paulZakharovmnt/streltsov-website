@@ -103,7 +103,9 @@ const ProductInfoPage = () => {
               <div className="add-to-cart-traingle"></div>
             </div>
           </div>
-          {showPopUpMessage && <PopupMessage currentProduct={currentProduct} />}
+          <Fade in={showPopUpMessage}>
+            <PopupMessage currentProduct={currentProduct} />
+          </Fade>
         </div>
         <div className="product-photo-container">
           <img
