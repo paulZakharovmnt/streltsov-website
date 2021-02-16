@@ -6,21 +6,24 @@ import FilterBar from "./Filters/FilterBar";
 import headerImg from "../../img/DSC03510.jpg";
 import listImg from "../../img/Products/DSC09187.jpg";
 import Product from "./Product";
+import Fade from "react-reveal/Fade";
 
 const ProductsPageByType = () => {
   const { childLink } = useParams();
-  // const filtersState = useSelector((state) => state.filtersReducer);
+  const filters = useSelector((state) => state.filtersReducer);
   const productsById = useSelector((state) => state.productsByIdReducer);
   const productsAllIds = useSelector((state) => state.productsAllIdsReducer);
 
   return (
     <div className="productByType-page">
-      <div className="productByType-intro">
-        <h1>{childLink}</h1>
-        <div className="productByType-intro-photo-container">
-          <img className="productByType-intro-photo" src={headerImg} alt="" />
+      <Fade>
+        <div className="productByType-intro">
+          <h1>{childLink}</h1>
+          <div className="productByType-intro-photo-container">
+            <img className="productByType-intro-photo" src={headerImg} alt="" />
+          </div>
         </div>
-      </div>
+      </Fade>
       {childLink === "Pen" && (
         <div className="filter-container">
           <FilterBar />
@@ -30,11 +33,22 @@ const ProductsPageByType = () => {
       <div className="productByType-list">
         {productsAllIds
           .filter((product) => productsById[product].type === childLink)
+          .filter((product) =>
+            filters.collection.value === ""
+              ? true
+              : productsById[product].collection === filters.collection.value
+          )
+          .filter((product) =>
+            filters.penType.value === ""
+              ? true
+              : productsById[product].penType === filters.penType.value
+          )
           .map((product) => (
             <Product
               productsById={productsById}
               product={product}
               listImg={listImg}
+              key={product}
             />
           ))}
       </div>
