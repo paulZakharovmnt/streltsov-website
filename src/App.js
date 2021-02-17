@@ -37,7 +37,7 @@ function App() {
         <div className="App">
           <header>
             <Nav />
-            {/* <BreadCrumbs /> */}
+            <BreadCrumbs />
           </header>
 
           <Switch>
