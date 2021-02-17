@@ -21,12 +21,12 @@ const Filter = ({ filters, filter }) => {
   const allFilterProps = penIds.map((pen) => productsById[pen][filter]);
 
   return (
-    <div className="filter-type">
+    <div
+      className="filter-type"
+      onClick={() => setShowFilterProps(!showFilterProps)}
+    >
       <div className="small-traingle-left"></div>
-      <div
-        className="filter-props"
-        onClick={() => setShowFilterProps(!showFilterProps)}
-      >
+      <div className="filter-props">
         <p>{filters[filter].name}:</p>
         <p>{filterInfo.value === "" ? "All" : filterInfo.value}</p>
       </div>
