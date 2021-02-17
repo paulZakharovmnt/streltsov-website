@@ -18,39 +18,40 @@ const Products = () => {
   // );
   return (
     <div className="products-page">
-      <Fade>
-        <div className="products-header">
-          <div className="products-title">
-            <h1>Products</h1>
-            <p>Some interesting text</p>
-          </div>
-          <div className="products-header-image">
-            <img src={headerImage} alt="" />
-          </div>
+      {/* <Fade> */}
+      <div className="products-header">
+        <div className="products-title">
+          <h1>Products</h1>
+          <p>Some interesting text</p>
         </div>
-      </Fade>
+        <div className="products-header-image">
+          <img src={headerImage} alt="" />
+        </div>
+      </div>
+      {/* </Fade> */}
       <div className="products-list">
         {linksWithOptions.map((parentLink) =>
           childLinks[parentLink].sublinks.map((sublink) => {
             return (
-              <Fade bottom distance={"100px"} delay={300}>
-                <Link
-                  to={`/streltsov-website/products/${childLinks[parentLink].linksData[sublink].name}`}
-                  className="product-container"
-                  key={sublink}
-                >
+              <Link
+                to={`/streltsov-website/products/${childLinks[parentLink].linksData[sublink].name}`}
+                className="product-container"
+                key={sublink}
+              >
+                <Fade bottom distance={"100px"} delay={300}>
                   <div className="product-img-box">
                     <img
                       src={childLinks[parentLink].linksData[sublink].image}
                       alt=""
                     />
                   </div>
-
+                </Fade>
+                <Fade bottom distance={"100px"} delay={300}>
                   <div className="product-title">
                     <h4>{childLinks[parentLink].linksData[sublink].name}</h4>
                   </div>
-                </Link>
-              </Fade>
+                </Fade>
+              </Link>
             );
           })
         )}
