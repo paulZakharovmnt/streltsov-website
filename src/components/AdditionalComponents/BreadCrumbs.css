@@ -11,9 +11,36 @@
   align-items: center;
 }
 .breadCrumbs {
+  /* display: flex;
+  align-items: center; */
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
   /* background-color: blue; */
+  height: 100%;
+}
+.crumbs-path {
+  /* background-color: lawngreen; */
+  /* padding-left: 10px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.crumbs-path > p {
+  margin: 0;
+  color: grey;
+}
+
+.path {
+  /* background-color: lightcoral; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .back-crumb {
@@ -28,6 +55,7 @@
 }
 
 .crumb-box {
+  /* background-color: lawngreen; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -35,7 +63,12 @@
   color: grey;
 }
 
-.crumb {
+.crumb-box > p {
+  margin: 0;
+}
+
+.crumb,
+.home-crumb {
   padding: 0 7px;
   text-decoration: none;
   border: none;
@@ -44,7 +77,8 @@
   transition: color 0.2s ease-in;
 }
 
-.crumb:hover {
+.crumb:hover,
+.home-crumb:hover {
   color: white;
 }
 
