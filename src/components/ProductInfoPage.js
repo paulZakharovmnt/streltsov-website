@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { productsByIdTEST } from "../core/TestProducts";
 import { useSelector, useDispatch } from "react-redux";
-import { addProductToCart } from "../redux/actions/actions";
+import { addProductToCart, changeFilter } from "../redux/actions/actions";
 import classNames from "classnames";
 import ProductImagesModal from "./ProductImagesModal";
 import "./ProductInfoPage.css";
@@ -20,9 +20,8 @@ const ProductInfoPage = () => {
     (state) => state.productsAllIdsInCartReducer
   );
   const dispatch = useDispatch();
-  // const productsInCart = useSelector((state) => state.cartReducer);
 
-  // const productsById = useSelector((state) => state.productsByIdReducer);
+  console.log(childLink);
 
   const currentProduct = productsByIdTEST[productId];
 
@@ -85,9 +84,9 @@ const ProductInfoPage = () => {
   // };
 
   return (
-    <Fade>
-      <div className="product-page">
-        <div className="product-info-container">
+    <div className="product-page">
+      <div className="product-info-container">
+        <Fade>
           <div className="product-info">
             <p>{currentProduct.collection}</p>
             <h1>{currentProduct.name}</h1>
@@ -106,7 +105,9 @@ const ProductInfoPage = () => {
           <Fade in={showPopUpMessage}>
             <PopupMessage currentProduct={currentProduct} />
           </Fade>
-        </div>
+        </Fade>
+      </div>
+      <Fade>
         <div className="product-photo-container">
           <img
             src={currentProduct.images[0]}
@@ -114,14 +115,14 @@ const ProductInfoPage = () => {
             onClick={() => setShowProductPhotosModal(true)}
           />
         </div>
-        {showProductPhotosModal && (
-          <ProductImagesModal
-            currentProduct={currentProduct}
-            setShowProductPhotosModal={setShowProductPhotosModal}
-          />
-        )}
-      </div>
-    </Fade>
+      </Fade>
+      {showProductPhotosModal && (
+        <ProductImagesModal
+          currentProduct={currentProduct}
+          setShowProductPhotosModal={setShowProductPhotosModal}
+        />
+      )}
+    </div>
   );
 };
 
