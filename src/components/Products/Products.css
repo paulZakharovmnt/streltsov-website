@@ -1,5 +1,5 @@
 .products-page {
-  padding-top: 240px;
+  padding-top: 60px;
   width: 72%;
   margin: 0 auto;
   min-height: 640px;
@@ -111,7 +111,7 @@
 @media screen and (max-width: 768px) {
   .products-page {
     width: 100%;
-    padding-top: 180px;
+    padding-top: 10px;
   }
 
   .products-header {
