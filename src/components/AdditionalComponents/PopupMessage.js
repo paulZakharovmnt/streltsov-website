@@ -2,7 +2,6 @@ import React from "react";
 import "./PopupMessage.css";
 
 const PopupMessage = ({ currentProduct }) => {
-  console.log(currentProduct);
   return (
     <div className="pop-up-message-container">
       <div className="popup-message">
