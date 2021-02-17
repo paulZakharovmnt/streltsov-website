@@ -25,11 +25,8 @@ const ProductImagesModal = ({ currentProduct, setShowProductPhotosModal }) => {
   return (
     <div className="black-layout">
       <div className="photo-container">
-        <div
-          className="close-modal-container"
-          onClick={() => setShowProductPhotosModal(false)}
-        >
-          Close Modal
+        <div className="close-modal-container">
+          <p onClick={() => setShowProductPhotosModal(false)}>Close</p>
         </div>
         <div className="photo-container-top">
           <LeftArrow showPrevImage={showPrevImage} />
