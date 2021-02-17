@@ -5,7 +5,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 300;
+  z-index: 9999;
 }
 
 .photo-container {
@@ -55,12 +55,31 @@
 }
 
 .selected-small-image {
-  border: 3px solid white;
+  transform: scale(1.2);
 }
 
 .close-modal-container {
   height: 8%;
+  /* cursor: pointer; */
+  /* background-color: beige; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-modal-container > p {
   cursor: pointer;
+  /* background-color: hotpink; */
+  padding: 6px;
+
+  color: rgb(179, 179, 179);
+  font-size: 24px;
+  transition: all 0.2s ease-in;
+}
+
+.close-modal-container > p:hover {
+  color: white;
 }
 
 @media screen and (max-width: 768px) {
