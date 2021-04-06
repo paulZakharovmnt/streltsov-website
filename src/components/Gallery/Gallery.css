@@ -1,0 +1,28 @@
+.admin {
+  background-color: tomato;
+  width: 72%;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+.tabs-container {
+  background-color: thistle;
+}
+
+.tab-selector {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: teal;
+}
+
+.tab-btn {
+  height: 60px;
+  background-color: brown;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
