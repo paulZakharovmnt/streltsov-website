@@ -1,0 +1,14 @@
+.control-panel {
+  color: white;
+}
+
+.controled-product {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.controled-product > img {
+  height: 100px;
+}

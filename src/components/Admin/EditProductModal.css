@@ -1,0 +1,18 @@
+.edit-modal {
+  background-color: #1e1e1ee8;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.edit-container {
+  width: 500px;
+  height: 600px;
+  background-color: chocolate;
+  margin: 0 auto;
+
+  margin-top: 150px;
+}

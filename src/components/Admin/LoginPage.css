@@ -1,0 +1,101 @@
+.login-page {
+  color: white;
+}
+
+.login-container {
+  /* background-color: white; */
+  width: 400px;
+  height: 500px;
+  margin: 0 auto;
+  padding-top: 200px;
+}
+
+.login {
+  /* background-color: blueviolet; */
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.login > h1 {
+  font-weight: 100;
+}
+
+.login > input {
+  color: white;
+  border: 1px solid rgb(172, 172, 172);
+  outline: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  width: 80%;
+  font-size: 14px;
+  padding: 10px;
+  margin-top: 20px;
+  transition: all 0.2s ease-in;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--black) inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+}
+
+.login > input:focus {
+  /* background-color: cadetblue; */
+  box-shadow: 0px 0px 6px 0.5px white;
+}
+
+.login-btn-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(80% + 20px);
+  height: 40px;
+
+  margin-top: 20px;
+  cursor: pointer;
+  /* background-color: royalblue; */
+}
+
+.login-btn-cont > p {
+  /* background-color: red; */
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  justify-content: center;
+  padding-left: 40px;
+  width: 86%;
+  font-size: 24px;
+  font-weight: 300;
+  transition: all 0.2s ease-in-out;
+}
+
+.login-btn-traingle {
+  border-color: transparent transparent transparent transparent;
+  border-style: solid;
+  border-width: 40px 52px 0px 0px;
+  height: 0px;
+  width: 0px;
+  transition: all 0.2s ease-in-out;
+}
+
+.login-btn-cont:hover > p {
+  background-color: white;
+  color: black;
+}
+
+.login-btn-cont:hover .login-btn-traingle {
+  border-color: white transparent transparent transparent;
+}
