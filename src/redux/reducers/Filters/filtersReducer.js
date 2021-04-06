@@ -1,14 +1,12 @@
 const initialState = {
   collection: {
+    id: "collection",
     name: "By Collection",
     value: "",
   },
   penType: {
+    id: "penType",
     name: "By Pen Type",
-    value: "",
-  },
-  price: {
-    name: "By Price",
     value: "",
   },
 };
@@ -26,7 +24,7 @@ const filtersReducer = (state = initialState, action) => {
     case "CLEAR_ALL_FILTERS":
       return initialState;
     case "CHANGE_PRICE_FILTER":
-      return { ...state, byPrice: action.payload };
+      return { ...state, price: action.payload };
     default:
       return state;
   }
