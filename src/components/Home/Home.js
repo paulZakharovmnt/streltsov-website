@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./Home.css";
 import image from "../../img/333.jpg";
 import image1 from "../../img/Products/DSC09312.jpg";
@@ -15,26 +15,20 @@ const Home = () => {
   const images = [image, image1, image2];
   const mobileImages = [red, blue, skull];
 
-  const showPrevImage = () => {
-    if (showingImageId === 0) {
-      setShowigImageId(images.length - 1);
-      return;
-    }
-    setShowigImageId(showingImageId - 1);
-  };
-
-  const showNextImage = () => {
+  const showNextImage = useCallback(() => {
     if (showingImageId === images.length - 1) {
       setShowigImageId(0);
       return;
     }
     setShowigImageId(showingImageId + 1);
-  };
+  }, [setShowigImageId, showingImageId, images.length]);
 
-  setTimeout(() => {
-    showNextImage();
-    return () => clearTimeout(showNextImage());
-  }, 7000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      showNextImage();
+    }, 7000);
+    return () => clearTimeout(timer);
+  }, [showNextImage]);
 
   return (
     <div className="homepage">

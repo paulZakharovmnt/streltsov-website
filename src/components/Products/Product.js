@@ -5,7 +5,6 @@ import Fade from "react-reveal/Fade";
 const Product = ({ product, productsById }) => {
   const productInfo = productsById[product];
   const { childLink } = useParams();
-  console.log(productInfo);
 
   return (
     <Link
