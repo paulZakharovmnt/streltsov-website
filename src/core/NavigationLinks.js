@@ -5,46 +5,44 @@ import bracelets from "../img/headers/bracelets.jpg";
 import keychains from "../img/headers/keychains.jpg";
 import beads from "../img/headers/beads.jpg";
 
-export const linksWithOptions = ["Pens", "Jewelry", "Accessory"];
-export const directLinks = ["Gallery", "About"];
-export const childLinks = {
-  Pens: {
-    sublinks: ["Pen", "Pencil"],
-    linksData: {
-      Pen: {
-        name: "Pen",
-        image: pen,
-      },
-      Pencil: {
-        name: "Pencil",
-        image: pencil,
-      },
-    },
+export const directLinks = ["Gallery", "About", "Contact"];
+export const productsCategoriesIds = [
+  "Pen",
+  "Pencil",
+  "Pendants",
+  "Bracelets",
+  "Keychains",
+  "Beads",
+];
+export const productsCategories = {
+  Pen: {
+    category: "Pen & Pencil",
+    name: "Pen",
+    image: pen,
   },
-  Jewelry: {
-    sublinks: ["Pendants", "Bracelets"],
-    linksData: {
-      Pendants: {
-        name: "Pendants",
-        image: pendants,
-      },
-      Bracelets: {
-        name: "Bracelets",
-        image: bracelets,
-      },
-    },
+  Pencil: {
+    category: "Pen & Pencil",
+    name: "Pencil",
+    image: pencil,
   },
-  Accessory: {
-    sublinks: ["Keychains", "Beads"],
-    linksData: {
-      Keychains: {
-        name: "Keychains",
-        image: keychains,
-      },
-      Beads: {
-        name: "Beads",
-        image: beads,
-      },
-    },
+  Pendants: {
+    category: "Jewelry",
+    name: "Pendants",
+    image: pendants,
+  },
+  Bracelets: {
+    category: "Jewelry",
+    name: "Bracelets",
+    image: bracelets,
+  },
+  Keychains: {
+    category: "Accessory",
+    name: "Keychains",
+    image: keychains,
+  },
+  Beads: {
+    category: "Accessory",
+    name: "Beads",
+    image: beads,
   },
 };
