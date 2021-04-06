@@ -7,7 +7,6 @@ import BackBTN from "./BackBTN";
 const BreadCrumbs = () => {
   const breadcrumbs = useBreadcrumbs();
 
-  const homepageCrumb = breadcrumbs[1].key;
   const pathCrumbs = breadcrumbs.slice(2, breadcrumbs.length - 1);
   const currentCrumb =
     breadcrumbs[breadcrumbs.length - 1].breadcrumb.props.children;
@@ -18,7 +17,7 @@ const BreadCrumbs = () => {
         <div className="breadCrumbs">
           <BackBTN breadcrumbs={breadcrumbs} />
           <div className="crumbs-path">
-            <Link to={`${homepageCrumb}`} className="home-crumb">
+            <Link to={`/streltsov-website/`} className="home-crumb">
               Home
             </Link>
             <p> &nbsp;/</p>
