@@ -5,6 +5,7 @@ import productsAllIdsInCartReducer from "./cartReducers/productsAllIdsInCartRedu
 import cartReducer from "./cartReducers/cartReducer";
 import filtersReducer from "./Filters/filtersReducer";
 import cartPreviewReducer from "./cartReducers/cartPreviewReducer";
+import settingsReducer from "./settings/settingsReducer";
 
 const allReducers = combineReducers({
   productsAllIdsReducer,
@@ -13,6 +14,7 @@ const allReducers = combineReducers({
   productsAllIdsInCartReducer,
   filtersReducer,
   cartPreviewReducer,
+  settingsReducer,
 });
 
 export default allReducers;
