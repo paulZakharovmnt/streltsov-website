@@ -161,3 +161,26 @@
   background-color: black;
   color: white;
 }
+
+/* ANIMATION */
+.fba-enter {
+  transform: translateX(800px);
+  opacity: 0;
+  transition: all 0.5s ease-in;
+}
+
+.fba-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fba-exit {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.5s ease-in;
+}
+
+.fba-exit-active {
+  transform: translateX(800px);
+  opacity: 0;
+}
