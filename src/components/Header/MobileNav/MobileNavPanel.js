@@ -8,7 +8,11 @@ import CartIcon from "../NavComponents/CartIcon";
 import useHideOnScrolled from "../../../core/useHiddenOnScroll";
 import SideMenu from "./SideMenu";
 
-const MobileNavPanel = () => {
+const MobileNavPanel = ({
+  uniqueProductCategories,
+  productsCategories,
+  productsCategoriesIds,
+}) => {
   const [showSideMenu, setShowSideMenu] = useState(false);
   const showCartPreview = useSelector((state) => state.cartPreviewReducer);
 
@@ -47,7 +51,12 @@ const MobileNavPanel = () => {
         unmountOnExit
         classNames="mnm"
       >
-        <SideMenu setShowSideMenu={setShowSideMenu} />
+        <SideMenu
+          setShowSideMenu={setShowSideMenu}
+          uniqueProductCategories={uniqueProductCategories}
+          productsCategories={productsCategories}
+          productsCategoriesIds={productsCategoriesIds}
+        />
       </CSSTransition>
       <CSSTransition
         in={showSideMenu || hiddenBottomIcons}
