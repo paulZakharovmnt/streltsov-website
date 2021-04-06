@@ -3,7 +3,6 @@ import BillingDetails from "./BillingDetails";
 import countProductsSubtotal from "../../core/countProductsSubtotal";
 import { useSelector } from "react-redux";
 import "./CartPage.css";
-import LoadingSpinner from "../AdditionalComponents/LoadingSpinner";
 
 const CartPage = () => {
   const [expressShipping, setExpressShipping] = useState(false);
@@ -14,8 +13,6 @@ const CartPage = () => {
   );
   const subtotal = countProductsSubtotal(productsInCart, productsAllIdsInCart);
 
-  console.log(subtotal);
-
   useEffect(() => {
     if (expressShipping) {
       setDeliveryCost(79);
@@ -23,13 +20,14 @@ const CartPage = () => {
     }
     setDeliveryCost(0);
   }, [expressShipping]);
+
   return (
     <div className="cart-page">
       <BillingDetails />
       <div className="cart-right">
         {productsAllIdsInCart.map((product) => {
           return (
-            <div className="cart-product">
+            <div className="cart-product" key={product}>
               <img src={productsInCart[product].image} alt="" />
               <h2>{productsInCart[product].name}</h2>
               <p>x{productsInCart[product].quontity}</p>
@@ -68,14 +66,12 @@ const CartPage = () => {
         </div>
         <div className="cart-total">
           <p>Total</p>
-          {/* <p>USD &nbsp;{subtotal + deliveryCost}</p> */}
           <p>USD &nbsp;2 000.-</p>
         </div>
         <div className="checkout-btn">
           <p>Proceed Checkout</p>
           <div className="checkout-btn-traingle"></div>
         </div>
-        {/* <LoadingSpinner /> */}
       </div>
     </div>
   );
