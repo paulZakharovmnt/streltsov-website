@@ -5,6 +5,28 @@ export const setProductsToStateFromFB = (products) => {
   };
 };
 
+export const addNewProduct = (newProduct) => {
+  return {
+    type: "ADD_PRODUCT",
+    payload: newProduct,
+  };
+};
+
+export const addNewType = (newType) => {
+  console.log(newType);
+  return {
+    type: "ADD_PRODUCT_TYPE",
+    payload: newType,
+  };
+};
+
+export const deleteProduct = (product) => {
+  return {
+    type: "DELETE_PRODUCT",
+    payload: product,
+  };
+};
+
 export const addProductToCart = (product) => {
   return {
     type: "ADD_PRODUCT_TO_CART",
