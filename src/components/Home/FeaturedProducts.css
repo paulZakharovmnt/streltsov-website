@@ -128,7 +128,7 @@
 
 .featured-dots {
   /* background-color: blue; */
-  width: 140px;
+  width: 240px;
   height: 10%;
   /* position: absolute; */
   display: flex;
@@ -139,16 +139,21 @@
 
 .featured-dot {
   /* background-color: coral; */
-  border: 1px solid white;
+  /* border: 1px solid white; */
+  /* height: 6px; */
+  width: 34px;
   height: 6px;
-  width: 6px;
-  border-radius: 50%;
+  background-color: grey;
+  border-radius: 8px;
+  /* border-radius: 50%; */
   transition: all 0.2s ease-in-out;
 }
 
 .selectedDot {
-  height: 10px;
-  width: 10px;
+  /* width: 40px; */
+  background-color: white;
+  /* height: 10px; */
+  /* width: 10px; */
 }
 
 .featured-image1-wrap {
@@ -255,6 +260,14 @@
   .featured-product-info > p {
     margin: 0;
     padding-top: 20px;
+  }
+
+  .featured-dots {
+    width: 100%;
+  }
+
+  .featured-dot {
+    width: 20px;
   }
 
   .featured-image1-dots {
