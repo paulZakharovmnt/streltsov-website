@@ -6,13 +6,18 @@ import classNames from "classnames";
 import LanguageSelector from "../NavComponents/LanguageSelector";
 import CartIcon from "../NavComponents/CartIcon";
 
-const DesktopNavPanel = () => {
+const DesktopNavPanel = ({
+  uniqueProductCategories,
+  productsCategories,
+  productsCategoriesIds,
+}) => {
   const [showProductsMenu, setShowProductsMenu] = useState(false);
+
+  // console.log(productsCategories);
 
   const productButtonClasses = classNames("d-link", {
     productMenuSelected: showProductsMenu,
   });
-
   return (
     <div className="d-nav">
       <div className="d-nav-logo">
@@ -71,57 +76,30 @@ const DesktopNavPanel = () => {
           onMouseLeave={() => setShowProductsMenu(false)}
         >
           <div className="d-product-container">
-            <ul className="d-product-subcategory">
-              <div className="d-subcategory-name">Pens</div>
-              <Link
-                to={`/streltsov-website/products/Pen`}
-                className="d-sublink"
-                onClick={() => setShowProductsMenu(false)}
-              >
-                Pen
-              </Link>
-              <Link
-                to={`/streltsov-website/products/Pencil`}
-                className="d-sublink"
-                onClick={() => setShowProductsMenu(false)}
-              >
-                Pencil
-              </Link>
-            </ul>
-            <ul className="d-product-subcategory">
-              <div className="d-subcategory-name">Jewelry</div>
-              <Link
-                to={`/streltsov-website/products/Pendants`}
-                className="d-sublink"
-                onClick={() => setShowProductsMenu(false)}
-              >
-                Pendants
-              </Link>
-              <Link
-                to={`/streltsov-website/products/Bracelets`}
-                className="d-sublink"
-                onClick={() => setShowProductsMenu(false)}
-              >
-                Bracelets
-              </Link>
-            </ul>
-            <ul className="d-product-subcategory">
-              <div className="d-subcategory-name">Accessory</div>
-              <Link
-                to={`/streltsov-website/products/Keychains`}
-                className="d-sublink"
-                onClick={() => setShowProductsMenu(false)}
-              >
-                Keychains
-              </Link>
-              <Link
-                to={`/streltsov-website/products/Beadsch`}
-                className="d-sublink"
-                onClick={() => setShowProductsMenu(false)}
-              >
-                Beads
-              </Link>
-            </ul>
+            {uniqueProductCategories.map((category) => {
+              return (
+                <ul className="d-product-subcategory" key={category}>
+                  <div className="d-subcategory-name">{category}</div>
+                  {productsCategoriesIds
+                    .filter(
+                      (productId) =>
+                        productsCategories[productId].category === category
+                    )
+                    .map((productType) => {
+                      return (
+                        <Link
+                          to={`/streltsov-website/products/${productType}`}
+                          className="d-sublink"
+                          onClick={() => setShowProductsMenu(false)}
+                          key={productType}
+                        >
+                          {productType}
+                        </Link>
+                      );
+                    })}
+                </ul>
+              );
+            })}
           </div>
           <div className="product-traingle"></div>
         </div>
