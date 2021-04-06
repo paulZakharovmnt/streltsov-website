@@ -10,11 +10,12 @@ import "./ProductInCart.css";
 const ProductInCart = ({ product, productsInCart }) => {
   const dispatch = useDispatch();
   const productInfo = productsInCart[product];
+
   useEffect(() => {
     if (productInfo.quontity === 0) {
       dispatch(deleteProductFromCart(product));
     }
-  }, [productInfo]);
+  }, [productInfo, dispatch, product]);
 
   return (
     <div className="cart-preview-product-container">
