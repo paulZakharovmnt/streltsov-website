@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
-import { useParams, Link } from "react-router-dom";
-import { productsByIdTEST } from "../core/TestProducts";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+// import { productsByIdTEST } from "../core/TestProducts";
 import { useSelector, useDispatch } from "react-redux";
-import { addProductToCart, changeFilter } from "../redux/actions/actions";
+import { addProductToCart } from "../redux/actions/actions";
 import classNames from "classnames";
 import ProductImagesModal from "./ProductImagesModal";
 import "./ProductInfoPage.css";
@@ -19,11 +19,10 @@ const ProductInfoPage = () => {
   const productsAllIdsInCart = useSelector(
     (state) => state.productsAllIdsInCartReducer
   );
+  const productsById = useSelector((state) => state.productsByIdReducer);
   const dispatch = useDispatch();
 
-  console.log(childLink);
-
-  const currentProduct = productsByIdTEST[productId];
+  const currentProduct = productsById[productId];
 
   useEffect(() => {
     if (productsAllIdsInCart.includes(productId)) {
