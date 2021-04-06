@@ -3,7 +3,7 @@ export const productsByIdTEST = {
   Hitori: {
     name: "Hitori",
     collection: "Dragon&Moon",
-    type: "Pen",
+    productType: "Pen",
     penType: "Ballpoint",
     id: 12221,
     price: 700,
@@ -26,7 +26,7 @@ export const productsByIdTEST = {
   Amelia: {
     name: "Amelia",
     collection: "Klimt duet",
-    type: "Pen",
+    productType: "Pen",
     penType: "Fountain",
     id: 12222,
     price: 900,
@@ -50,7 +50,8 @@ export const productsByIdTEST = {
   Lion: {
     name: "Lion",
     collection: "Ninja",
-    type: "Pencil",
+    productType: "Pencil",
+    penType: null,
     id: 12223,
     price: 400,
     material: "Titanium",
@@ -72,7 +73,8 @@ export const productsByIdTEST = {
   "Aircraft Skin": {
     name: "Aircraft Skin",
     collection: "Samurai",
-    type: "Pencil",
+    productType: "Pencil",
+    penType: null,
     id: 12224,
     price: 700,
     material: "Aluminium",
