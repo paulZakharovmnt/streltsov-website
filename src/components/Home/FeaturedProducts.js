@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./FeaturedProducts.css";
-import { CSSTransition } from "react-transition-group";
 import LeftArrow from "../AdditionalComponents/ImageNavArrows/LeftArrow";
 import RightArrow from "../AdditionalComponents/ImageNavArrows/RightArrow";
 import { useSelector } from "react-redux";
-import Fade from "react-reveal/Fade";
 
 const FeaturedProducts = () => {
   const [showingProductId, setShowingProductId] = useState(0);
@@ -16,6 +14,8 @@ const FeaturedProducts = () => {
     (product) => productsById[product].featured === true
   );
 
+  console.log(onlyFeaturedProducts);
+  console.log(productsById);
   let currentProduct = {};
 
   if (onlyFeaturedProducts.length > 0) {
@@ -49,14 +49,12 @@ const FeaturedProducts = () => {
               <p>{currentProduct.description}</p>
             </div>
             <div className="featured-product-view-btn">
-              {/* <p> */}
               <Link
                 className="product-view-btn"
                 to={`/streltsov-website/products/${currentProduct.type}/${currentProduct.name}`}
               >
                 View product
               </Link>
-              {/* </p> */}
 
               <div className="featured-product-view-btn-traingle"></div>
             </div>
@@ -76,22 +74,7 @@ const FeaturedProducts = () => {
                 ))}
               </div>
               <div className="featured-image1-wrap">
-                {/* <CSSTransition
-                  key={currentProduct}
-                  in={currentProduct}
-                  addEndListener={(node, done) =>
-                    node.addEventListener("transitionend", done, false)
-                  }
-                  timeout={1000}
-                  mountOnEnter
-                  unmountOnExit
-                  classNames="fi1"
-                > */}
-                {/* <Fade mountOnEnter> */}
                 <img src={currentProduct.images[0]} alt="" />
-                {/* </Fade> */}
-
-                {/* </CSSTransition> */}
               </div>
             </div>
             <div className="featured-image2-control">
