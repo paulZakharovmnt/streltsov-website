@@ -1,6 +1,10 @@
-const sortProductsByPrice = (productsById) => {
-  return Object.values(productsById).sort((a, b) => {
-    return a.price > b.price ? 1 : b.price > a.price ? -1 : 0;
+const sortProductsByPrice = (productsAllIds, productsById) => {
+  return productsAllIds.sort((a, b) => {
+    return productsById[a].price > productsById[b].price
+      ? 1
+      : productsById[b].price > productsById[a].price
+      ? -1
+      : 0;
   });
 };
 
