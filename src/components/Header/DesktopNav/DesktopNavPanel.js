@@ -49,6 +49,12 @@ const DesktopNavPanel = () => {
             </Link>
             <div className="small-traingle"></div>
           </li>
+          <li className="d-link">
+            <Link to={`/streltsov-website/contact`} className="d-link-to">
+              Privet
+            </Link>
+            <div className="small-traingle"></div>
+          </li>
         </ul>
         <div className="d-language">
           <LanguageSelector />
